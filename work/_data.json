@@ -1,0 +1,16 @@
+{
+  "printDesign":
+    {"name": "print design"},
+  "illustration":
+    {"name": "illustration"},
+  "identityDevelopment":
+    {"name": "identity development"},
+  "exhibitionDesign":
+    {"name": "exhibition design"},
+  "specialProjects":
+    {"name": "special projects"},
+  "animation":
+    {"name": "animation"},
+  "artCommissions":
+    {"name": "art commissions"}
+}
