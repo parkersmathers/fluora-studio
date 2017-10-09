@@ -1,1 +1,3 @@
-<%- partial('_landing') %>
+<% if(current.source == 'index') { %>
+  <%- partial('landing') %>
+<% } %>
