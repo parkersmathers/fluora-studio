@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= owner %></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <h2><a href="index.html"><%= owner %></a></h2>
+      </nav>
+      <%- yield %>
+      <footer>
+        <p>&copy; <%= new Date().getFullYear() %> <%= owner %></p>
+      </footer>
+    </div>
+  </body>
+</html>
