@@ -1,5 +1,9 @@
-<% if(current.source == 'index') { %>
-  <%- partial('landing') %>
-<% } else { %>
-  <%- partial('grid') %>
-<% } %>
+<div class="container">
+  <% if(current.source == 'index') { %>
+    <%- partial('landing') %>
+    <%- partial('grid') %>
+  <% } else { %>
+    <%- partial('landing') %>
+    <%- partial('grid') %>
+  <% } %>
+</div>
