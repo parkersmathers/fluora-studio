@@ -88,46 +88,49 @@ footer p {
   display: inline-block;
 }
 
-/* fancy underline */
 .u-l {
-  border-bottom: solid .05em;
+  border-bottom: solid .05em; /* fancy underline */
   line-height: .8;
 }
 
-/* show portrait-breaks */
 .p-br {
-  display: inline-block;
+  display: inline-block; /* show portrait-breaks */
 }
 
-/* hide landscape-breaks */
 .l-br {
-  display: none;
+  display: none; /* hide landscape-breaks */
 }
 
 /* GRID */
 
 .grid {
-  /*width: 100%;*/
-  /*height: 100%;*/
-  margin: 0 .75rem;
   flex: 1;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: flex-start;
-  visibility: hidden;
 }
 
 .card {
   flex: 1 0 33.33%;
-  padding: 1vw;
+  padding-right: .75rem;
+}
+
+div.card:nth-child(3n) {
+  padding-right: 0;
+  padding-top: .75rem;
+}
+
+div.card:nth-child(3) {
+  padding-top: 0;
+}
+
+div.card:nth-child(n+4) {
+  padding-top: .75rem;
 }
 
 .card-content {
-  width: 100%;
-  height: 100%;
   background-clip: content-box;
-  position: relative;
 }
 
 .card-image {
@@ -136,6 +139,37 @@ footer p {
   border-style: none;
   vertical-align: middle;
   opacity: .05;
+}
+
+/* card colors */
+
+.orchid {
+  background-color: rgb(210, 157, 198);
+}
+
+.silver {
+  background-color: rgb(170, 170, 170);
+}
+
+.blue {
+  background-color: rgb(145,174,196);
+}
+
+.teal {
+  background-color: rgb(90, 171, 183);
+}
+
+.gold {
+  background-color: rgb(154, 147, 120);
+  border-radius: 50%;
+}
+
+.lemon {
+  background-color: rgb(209, 205, 110);
+}
+
+.rose {
+  background-color: rgb(182, 126, 119);
 }
 
 @media screen and (orientation: landscape) {
@@ -154,7 +188,6 @@ footer p {
     line-height: 1.4;
   }
   .u-l {
-    /* fancy underline */
     border-bottom: solid .06em;
     line-height: .9;
   }
@@ -163,5 +196,25 @@ footer p {
   }
   .p-br {
     display: none;
+  }
+  .grid {
+    /*width: 75vw;*/
+    margin-left: -.75rem;
+  }
+  .card {
+    flex: 1 0 20%;
+    padding-right: 1.5rem;
+  }
+  div.card:nth-child(3n) {
+    padding-right: 1.5rem;
+  }
+  div.card:nth-child(n+4) {
+    padding-top: 0;
+  }
+  div.card:nth-child(5n) {
+    padding-right: 0;
+  }
+  div.card:nth-child(n+6) {
+    padding-top: 1.5rem;
   }
 }
