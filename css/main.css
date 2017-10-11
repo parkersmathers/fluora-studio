@@ -43,8 +43,6 @@ a {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
-  /*flex-direction: column;
-  */
 }
 
 nav, footer, .landing {
@@ -60,7 +58,7 @@ nav {
 
 nav h2 {
   font-size: 2.5vh;
-  height: 5vh;
+  height: 6vh;
   padding: 1rem 0 .75rem;
 }
 
@@ -85,11 +83,13 @@ footer p {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* LANDING */
 
 .landing {
+  /*z-index: 1;*/
   flex: 1;
 }
 
@@ -119,6 +119,8 @@ footer p {
 /* GRID */
 
 .grid {
+  z-index: 1;
+  margin-top: -130vw;
   flex: 1;
   display: flex;
   flex-flow: row wrap;
@@ -176,17 +178,16 @@ footer p {
   background-color: rgb(182, 126, 119);
 }
 
-/*@media screen and (min-width: 720px) {
-  .landing h1 {
-    font-size: 3vw;
-    line-height: 1.6;
-  }
-}*/
-
 @media screen and (orientation: landscape) {
   .wrapper {
     width: 80vw;
     margin: 0 4vw;
+  }
+  .container {
+    height: 80vh;
+  }
+  .grid {
+    margin-top: -82vh;
   }
   nav, footer, .landing {
     margin-left: 1vw;
@@ -224,7 +225,7 @@ footer p {
   }
   .landing h1 {
     font-size: 4.2vw;
-    line-height: 1.4;
+    line-height: 1.3;
   }
   .card {
     padding: .75rem .5rem;

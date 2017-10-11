@@ -1,5 +1,5 @@
   <% if(current.source == 'index') { %>
-    <%- partial('landing') %>
-  <% } else { %>
-    <%- partial('grid') %>
+    <%- partial('_landing') %>
+  <% } else if(current.source == 'work') { %>
+    <%- partial('work') %>
   <% } %>
