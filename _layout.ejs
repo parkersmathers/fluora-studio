@@ -10,10 +10,12 @@
   <body>
     <div class="wrapper">
       <nav>
-        <h2><a href="index.html"><%= owner %></a></h2>
-        <h2><a href="grid.html"><%= owner %></a></h2>
+        <h2><a href="index.html">Fluora</a></h2>
+        <h2><a href="grid.html">Studio</a></h2>
       </nav>
-      <%- yield %>
+      <div class="container">
+        <%- yield %>
+      </div>
       <footer>
         <p>&copy; <%= new Date().getFullYear() %> <%= owner %></p>
       </footer>
