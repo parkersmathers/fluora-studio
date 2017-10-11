@@ -1,0 +1,17 @@
+<div class="container">
+  <% if(current.source == 'index') { %>
+    <section class="landing active">
+      <%- partial('_landing') %>
+    </section>
+    <section class="grid hidden">
+      <%- partial('_work') %>
+    </section>
+  <% } else { %>
+    <section class='landing hidden'>
+      <%- partial('_landing') %>
+    </section>
+    <section class='grid active'>
+      <%- partial('_work') %>
+    </section>
+  <% } %>
+</div>

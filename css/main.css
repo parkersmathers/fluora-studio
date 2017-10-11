@@ -86,10 +86,19 @@ footer p {
   justify-content: flex-start;
 }
 
+/* active overlay and hidden sibling */
+
+.active {
+  visibility: visible;
+  z-index: 1;
+}
+.hidden {
+  visibility: hidden;
+}
+
 /* LANDING */
 
 .landing {
-  /*z-index: 1;*/
   flex: 1;
 }
 
@@ -119,7 +128,6 @@ footer p {
 /* GRID */
 
 .grid {
-  z-index: 1;
   margin-top: -130vw;
   flex: 1;
   display: flex;
