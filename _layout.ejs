@@ -10,7 +10,9 @@
   <body>
     <div class="wrapper">
       <%- partial('_nav') %>
-      <%- yield %>
+      <div class="container">
+        <%- yield %>
+      </div>
       <footer>
         <p>&copy; <%= new Date().getFullYear() %> <%= owner %></p>
       </footer>

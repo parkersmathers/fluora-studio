@@ -128,7 +128,7 @@ footer p {
 /* GRID */
 
 .grid {
-  margin-top: -130vw;
+  /*margin-top: -130vw;*/
   flex: 1;
   display: flex;
   flex-flow: row wrap;
@@ -195,7 +195,7 @@ footer p {
     height: 80vh;
   }
   .grid {
-    margin-top: -82vh;
+    /*margin-top: -82vh;*/
   }
   nav, footer, .landing {
     margin-left: 1vw;
