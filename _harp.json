@@ -1,5 +1,24 @@
 {
   "globals": {
-    "owner": "Fluora Studio"
+    "owner": "Fluora Studio",
+    "work": [
+      {
+        "category": "print-design",
+        "title": "NYU Shanghai Identity and Print Material",
+        "client": "NYU"
+      },
+      {
+        "category": "illustration",
+        "title": "NYU Shanghai Identity and Print Material",
+        "client": "NYU"
+      },
+      {
+        "category": "exhibition-design",
+        "title": "Charles Dickens: The Key to Character*",
+        "client": "New York Public Library",
+        "with": "Roger Westerman",
+        "award": "* SEGD Global Design Award"
+      }
+    ]
   }
 }

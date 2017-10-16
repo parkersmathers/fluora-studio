@@ -84,6 +84,7 @@ footer p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
 }
 
 /* active overlay and hidden sibling */
@@ -92,8 +93,11 @@ footer p {
   visibility: visible;
   z-index: 1;
 }
+.landing.active {
+  position: absolute;
+}
 .hidden {
-  visibility: hidden;
+  opacity: .2;
 }
 
 /* LANDING */
@@ -129,7 +133,7 @@ footer p {
 
 .grid {
   /*margin-top: -130vw;*/
-  flex: 1;
+  /*flex: 1;*/
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
