@@ -129,6 +129,43 @@ footer p {
   display: none; /* hide landscape-breaks */
 }
 
+/* landing links colorized */
+
+.print-design:hover,
+.print-design.hover {
+  color: rgb(210, 157, 198);
+}
+
+.illustration:hover,
+.illustration.hover {
+  color: rgb(170, 170, 170);
+}
+
+.identity-development:hover,
+.identity-development.hover {
+  color: rgb(145,174,196);
+}
+
+.exhibition-design:not(.no-hover):hover,
+.exhibition-design.hover:not(.no-hover) {
+  color: rgb(90, 171, 183);
+}
+
+.special-projects:not(.no-hover):hover,
+.special-projects.hover:not(.no-hover) {
+  color: rgb(154, 147, 120);
+}
+
+.animation:hover,
+.animation.hover {
+  color: rgb(209, 205, 110);
+}
+
+.art-commissions:hover,
+.art-commissions.hover {
+  color: rgb(182, 126, 119);
+}
+
 /* GRID */
 
 .grid {
