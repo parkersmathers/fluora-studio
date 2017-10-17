@@ -3,6 +3,8 @@ $(document).ready(function () {
   $('.landing.active a').each(function () {
     var href = $(this).attr('href')
     var grid = $('.grid')
+    var landing = $('.landing')
+    var cards
 
     $(this).on( {
 
@@ -14,6 +16,10 @@ $(document).ready(function () {
       'mouseleave': function (e) {
         e.preventDefault()
         cards.children().removeClass('active')
+      },
+      'click': function (e) {
+        e.preventDefault()
+        console.log(landing);
       }
     })
   })
