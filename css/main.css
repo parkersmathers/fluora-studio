@@ -89,7 +89,8 @@ footer p {
 
 /* active overlay and hidden sibling */
 
-.active {
+.active,
+.current {
   visibility: visible;
   z-index: 1;
 }

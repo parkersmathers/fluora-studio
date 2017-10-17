@@ -11,15 +11,16 @@ $(document).ready(function () {
       'mouseenter': function(e) {
         e.preventDefault()
         cards = grid.find('.' + href + '')
-        cards.children().addClass('active')
+        cards.children().addClass('current')
       },
       'mouseleave': function (e) {
         e.preventDefault()
-        cards.children().removeClass('active')
+        cards.children().removeClass('current')
       },
       'click': function (e) {
         e.preventDefault()
         landing.children('h1').addClass('hidden')
+        cards.children().addClass('active')
         $(this).addClass('active')
       }
     })
