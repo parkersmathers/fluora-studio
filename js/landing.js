@@ -19,7 +19,8 @@ $(document).ready(function () {
       },
       'click': function (e) {
         e.preventDefault()
-        console.log(landing);
+        landing.children('h1').addClass('hidden')
+        $(this).addClass('active')
       }
     })
   })
