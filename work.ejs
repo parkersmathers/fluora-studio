@@ -1,3 +1,7 @@
+<section class="landing <%- current.source == 'index'? 'active' : 'hidden'%>">
+  <%- partial('_landing') %>
+</section>
+
 <section class="grid <%- current.source == 'work' ? 'active' : 'hidden'%>">
   <div class="print-design card">
     <div class="orchid card-content">
@@ -147,8 +151,4 @@
       </div>%>
     </div>
   </div>
-</section>
-
-<section class="landing <%- current.source == 'index'? 'active' : 'hidden'%>">
-  <%- partial('_landing') %>
 </section>

@@ -87,30 +87,10 @@ footer p {
   position: relative;
 }
 
-/* active overlay and hidden sibling */
-
-.active,
-.current {
-  visibility: visible;
-  z-index: 1;
-}
-.landing.active {
-  position: absolute;
-}
-.landing a.active {
-  z-index: 2;
-}
-.hidden {
-  visibility: hidden;
-}
-.faded {
-  opacity: .2;
-}
-
 /* LANDING */
 
 .landing {
-  flex: 1;
+  position: absolute;
 }
 
 .landing h1 {
@@ -142,36 +122,35 @@ footer p {
   color: rgb(210, 157, 198);
 }
 
-.illustration:hover {
+.illustration:not(.active):hover {
   color: rgb(170, 170, 170);
 }
 
-.identity-development:hover {
+.identity-development:not(.active):hover {
   color: rgb(145,174,196);
 }
 
-.exhibition-design:not(.no-hover):hover,
+.exhibition-design:not(.active):hover,
 .exhibition-design.hover:not(.no-hover) {
   color: rgb(90, 171, 183);
 }
 
-.special-projects:hover {
+.special-projects:not(.active):hover {
   color: rgb(154, 147, 120);
 }
 
-.animation:hover {
+.animation:not(.active):hover {
   color: rgb(209, 205, 110);
 }
 
-.art-commissions:hover {
+.art-commissions:not(.active):hover {
   color: rgb(182, 126, 119);
 }
 
 /* GRID */
 
 .grid {
-  /*margin-top: -130vw;*/
-  /*flex: 1;*/
+  flex: 1;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -226,6 +205,31 @@ footer p {
 
 .rose {
   background-color: rgb(182, 126, 119);
+}
+
+/* jQuery play for landing-grid hover-toggle */
+
+.active,
+.current {
+  visibility: visible;
+  z-index: 1;
+}
+.landing.active,
+.grid.active {
+  /*position: absolute;*/
+}
+.landing a.active {
+  z-index: 2;
+}
+.hidden {
+  visibility: hidden;
+}
+.landing.hidden .current {
+  position: relative;
+  z-index: 3;
+}
+.faded {
+  opacity: .2;
 }
 
 @media screen and (orientation: landscape) {

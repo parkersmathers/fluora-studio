@@ -13,12 +13,12 @@ $(document).ready(function () {
         cards = grid.children().not('.' + cat + '')
         cards.addClass('faded')
         link = landing.find('.' + cat + '.f-b')
-        console.log(link);
         link.addClass('current')
       },
       'mouseleave': function (e) {
         e.preventDefault()
         cards.removeClass('faded')
+        link.removeClass('current')
       },
       'click': function (e) {
         e.preventDefault()
