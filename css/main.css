@@ -103,6 +103,9 @@ footer p {
 .hidden {
   visibility: hidden;
 }
+.faded {
+  opacity: .2;
+}
 
 /* LANDING */
 
