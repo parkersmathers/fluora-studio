@@ -1,5 +1,10 @@
-<section class="landing <%- current.source == 'index'? 'active' : 'hidden'%>">
-  <%- partial('_landing') %>
-</section>
+<% if (current.source == 'index') { %>
 
-<%- partial('work') %>
+  <%- partial('_landing', { layer: 'active' }) %>
+  <%- partial('work', { layer: 'hidden' }) %>
+
+<% } else if (current.source == 'work') { %>
+
+  <%- partial('work', { layer: 'active' }) %>
+
+<% } %>

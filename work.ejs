@@ -1,8 +1,7 @@
-<section class="landing <%- current.source == 'index'? 'active' : 'hidden'%>">
+<% if (current.source == 'work') { %>
   <%- partial('_landing') %>
-</section>
-
-<section class="grid <%- current.source == 'work' ? 'active' : 'hidden'%>">
+<% } %>
+<section class="grid <%- current.source == 'work' ? 'active' : 'hidden' %>">
   <div class="print-design card">
     <div class="orchid card-content">
       <img class="card-image" src="images/image1_091217.jpg" alt="NYU Shanghai print material">
