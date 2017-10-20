@@ -89,7 +89,8 @@ footer p {
 
 /* LANDING */
 
-.landing {
+.landing,
+.landing.hidden {
   position: absolute;
 }
 
@@ -99,7 +100,6 @@ footer p {
 }
 
 .f-b, .u-l {
-  cursor: pointer;
   display: inline-block;
 }
 
@@ -114,37 +114,6 @@ footer p {
 
 .l-br {
   display: none; /* hide landscape-breaks */
-}
-
-/* landing links colorized */
-
-.print-design:not(.active):hover {
-  color: rgb(210, 157, 198);
-}
-
-.illustration:not(.active):hover {
-  color: rgb(170, 170, 170);
-}
-
-.identity-development:not(.active):hover {
-  color: rgb(145,174,196);
-}
-
-.exhibition-design:not(.active):hover,
-.exhibition-design.hover:not(.no-hover) {
-  color: rgb(90, 171, 183);
-}
-
-.special-projects:not(.active):hover {
-  color: rgb(154, 147, 120);
-}
-
-.animation:not(.active):hover {
-  color: rgb(209, 205, 110);
-}
-
-.art-commissions:not(.active):hover {
-  color: rgb(182, 126, 119);
 }
 
 /* GRID */
@@ -209,26 +178,61 @@ footer p {
 
 /* jQuery play for landing-grid hover-toggle */
 
+/* colorized */
+
+.print-design.current {
+  color: rgb(210, 157, 198);
+}
+
+.illustration.current {
+  color: rgb(170, 170, 170);
+}
+
+.identity-development.current {
+  color: rgb(145,174,196);
+}
+
+.exhibition-design.current {
+  color: rgb(90, 171, 183);
+}
+
+.special-projects.current {
+  color: rgb(154, 147, 120);
+}
+
+.animation.current {
+  color: rgb(209, 205, 110);
+}
+
+.art-commissions.current {
+  color: rgb(182, 126, 119);
+}
+
 .active,
 .current {
   visibility: visible;
-  z-index: 1;
-}
-.landing.active,
-.grid.active {
-  /*position: absolute;*/
-}
-.landing a.active {
   z-index: 2;
 }
+
 .hidden {
   visibility: hidden;
+  z-index: 1;
 }
-.landing.hidden .current {
+
+.current {
+  cursor: default;
   position: relative;
-  z-index: 3;
 }
-.faded {
+
+.z1 {
+  z-index: 1;
+}
+.z2 {
+  z-index: 2;
+}
+
+
+.card-content.faded {
   opacity: .2;
 }
 
