@@ -4,20 +4,140 @@
     "work": [
       {
         "category": "print-design",
+        "color": "orchid",
+        "image": "images/image1_091217.jpg",
         "title": "NYU Shanghai Identity and Print Material",
-        "client": "NYU"
-      },
-      {
-        "category": "illustration",
-        "title": "NYU Shanghai Identity and Print Material",
-        "client": "NYU"
+        "client": "NYU",
+        "contributor": "",
+        "award": ""
       },
       {
         "category": "exhibition-design",
+        "color": "teal",
+        "image": "images/image2_082517.jpg",
         "title": "Charles Dickens: The Key to Character*",
         "client": "New York Public Library",
-        "with": "Roger Westerman",
+        "contributor": "Roger Westerman",
         "award": "* SEGD Global Design Award"
+      }
+      {
+        "category": "illustration",
+        "color": "silver",
+        "image": "images/image3_082517.jpg",
+        "title": "butterfly & fly",
+        "client": "fly",
+        "contributor": "butter",
+        "award": ""
+      },
+      {
+        "category": "print-design",
+        "color": "orchid",
+        "image": "images/image4_082517.jpg",
+        "title": "NYU Abu Dhabi Reflections Book",
+        "client": "NYU",
+        "contributor": "Michelle Willems",
+        "award": ""
+      },
+      {
+        "category": "special-projects",
+        "color": "gold",
+        "image": "images/image5_082517.jpg",
+        "title": "Zoetrope Animation",
+        "client": "New York Public Library",
+        "contributor": "Roger Westerman",
+        "award": ""
+      },
+
+      {
+        "category": "special-projects",
+        "color": "gold",
+        "image": "images/image6_091217.jpg",
+        "title": "NYU Global Programs Sticker Series",
+        "client": "NYU",
+        "contributor": "",
+        "award": ""
+      },
+      {
+        "category": "art-commissions",
+        "color": "rose",
+        "image": "images/image7_091217.jpg",
+        "title": "The New Emirati Britannica",
+        "client": "Sharjah Art Foundation",
+        "contributor": "Lynn Love",
+        "award": ""
+      },
+      {
+        "category": "exhibition-design",
+        "color": "teal",
+        "image": "images/image8_082517.jpg",
+        "title": "Three Faiths exhibition",
+        "client": "New York Public Library",
+        "contributor": "Amy Forman",
+        "award": ""
+      },
+      {
+        "category": "identity-development",
+        "color": "blue",
+        "image": "images/image9_082517.jpg",
+        "title": "SSRC Identity &mdash; Logo and Print Materials",
+        "client": "SSRC",
+        "contributor": "Ravi Rajakumar",
+        "award": ""
+      },
+      {
+        "category": "illustration",
+        "color": "silver",
+        "image": "images/image10_082517.jpg",
+        "title": "Lewis Thomas Prize &mdash; Custom Illustration",
+        "client": "The Rockefeller University",
+        "contributor": "",
+        "award": ""
+      },
+
+      {
+        "category": "animation",
+        "color": "lemon",
+        "image": "images/image11_082517.jpg",
+        "title": "Q Magazine &mdash; NYU Innovations issue",
+        "client": "NYU",
+        "contributor": "",
+        "award": ""
+      },
+      {
+        "category": "identity-development",
+        "color": "blue",
+        "image": "images/image12_082517.jpg",
+        "title": "PLY Analytics &mdash; Logo, Writing, and Website",
+        "client": "PLY Analytics",
+        "contributor": "",
+        "award": ""
+      },
+      {
+        "category": "print-design",
+        "color": "orchid",
+        "image": "images/image13_082517.jpg",
+        "title": "Women &amp; Science Lecture Print Materials",
+        "client": "The Rockefeller University",
+        "contributor": "",
+        "award": ""
+      },
+      {
+        "category": "special-projects",
+        "color": "gold",
+        "image": "images/image14_082517.jpg",
+        "title": "NYU Global Programs Diorama Windows",
+        "client": "NYU",
+        "contributor": "Chris Browne",
+        "award": ""
+      },
+      {
+        "category": "identity-development",
+        "color": "blue",
+        "image": "images/image15_082517.jpg",
+        "title": "Science Saturday",
+        "client": "Science Saturday",
+        "contributor": "",
+        "award": "Award"
       }
     ]
   }
