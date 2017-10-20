@@ -4,24 +4,23 @@ $(document).ready(function () {
     var link = $(this)
     var href = link.attr('href')
     var cards = $('.grid').find('.' + href + '')
-    // var content = cards.find('.card-content')
 
     $(this).on( {
 
       'mouseenter': function(e) {
         e.preventDefault()
-        cards.children('.card-content').addClass('current z1')
-        link.addClass('current z2')
+        cards.addClass('current z1')
+        $('.landing').addClass('z2')
       },
       'mouseleave': function (e) {
         e.preventDefault()
         cards.removeClass('current z1')
-        link.removeClass('current z2')
+        $('.landing').removeClass('z2')
       },
       'click': function (e) {
         e.preventDefault()
-        $('.landing').children('h1').addClass('hidden')
-        cards.addClass('active z1')
+        $('.landing').removeClass('active').addClass('hidden')
+        cards.removeClass('current z1').addClass('active z1')
         link.addClass('active z2')
       }
     })

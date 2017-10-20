@@ -1,10 +1,10 @@
 <% if (current.source == 'index') { %>
 
-  <%- partial('_landing', { layer: 'active' }) %>
-  <%- partial('work', { layer: 'hidden' }) %>
+  <%- partial('_landing') %>
+  <%- partial('work') %>
 
 <% } else if (current.source == 'work') { %>
 
-  <%- partial('work', { layer: 'active' }) %>
+  <%- partial('work') %>
 
 <% } %>

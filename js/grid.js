@@ -2,37 +2,30 @@ $(document).ready(function () {
 
   $('.grid.active .card').each(function () {
     var cat = $(this).attr('class').split(' ').shift()
-    var grid = $('.grid')
-    var landing = $('.landing')
-    var cards
-    var uncards
-    var link
+    var cards = $('.grid').find('.' + cat + '')
+    var uncards = $('.grid').find('.card').not('.' + cat + '').find('.card-content')
+    var link = $('.landing').find('a.' + cat + '')
 
     $(this).on( {
 
       'mouseenter': function(e) {
         e.preventDefault()
-        uncards = grid.find('.card').not('.' + cat + '')
-        uncards.find('.card-content').addClass('faded')
-        cards = grid.find('.' + cat + '')
-                    .addClass('current z1')
-        link = landing.find('.' + cat + '.f-b')
-                      .addClass('current z2')
-                      .css('color', 'inherit')
+        uncards.addClass('faded')
+        cards.addClass('current z1')
+        link.addClass('current z2')
       },
       'mouseleave': function (e) {
         e.preventDefault()
-        e.stopPropagation()
-        uncards.find('.card-content').removeClass('faded')
+        uncards.removeClass('faded')
         cards.removeClass('current z1')
         link.removeClass('current z2')
       },
       'click': function (e) {
         e.preventDefault()
-        uncards.removeClass('faded').addClass('hidden')
+        $('.grid').removeClass('active').addClass('hidden')
+        uncards.removeClass('faded')
         cards.removeClass('current z1').addClass('active')
         link.removeClass('current z2').addClass('active')
-        // $(this).addClass('active')
       }
     })
   })
