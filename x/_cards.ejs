@@ -1,0 +1,15 @@
+<% Object.entries(work).forEach(function ([cardId, cardData]) { %>
+
+  <% if(cardData.category == current.source) { %>
+    <div class="<%= cardData.category %> card">
+      <div class="<%= cardData.color %> card-content">
+        <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
+        <p><%= cardData.title %></p>
+        <p><%= cardData.client %></p>
+        <p><%= cardData.contributor %></p>
+        <p><%= cardData.award %></p>
+      </div>
+    </div>
+  <% } %>
+
+<% }) %>
