@@ -219,7 +219,7 @@ footer p {
 }
 
 .current {
-  cursor: default;
+  cursor: pointer;
   position: relative;
 }
 
@@ -228,6 +228,10 @@ footer p {
 }
 .z2 {
   z-index: 2;
+}
+
+.landing.hidden h1 span a.current {
+  pointer-events: none;
 }
 
 .landing.hidden .current {

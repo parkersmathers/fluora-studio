@@ -1,17 +1,17 @@
 $(document).ready(function () {
 
-  $('.card').each( function () {
-    var card = $(this)
-    var content = card.find('.card-content')
-    var image = card.find('.card-image')
+  $('.grid').on( {
 
-    $(this).on( {
+    'mouseover': function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      $(this).find('img').css('opacity', 1)
+    },
 
-      'mouseenter': function (e) {
-        e.preventDefault()
-        e.stopPropagation()
-        console.log('hi');
-      }
-    })
-  }, '.active')
+    'mouseout': function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      $(this).find('img').removeAttr('style')
+    }
+  }, '.card.active')
 })
