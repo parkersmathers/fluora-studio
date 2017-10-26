@@ -1,3 +1,3 @@
-// Add listener and handler to 'here' link
-// mouseenter/leave for gray grid behind landing text-rendering
+// Add listener and handler to 'here' link for
+// mouseenter/leave: toggle shadow grid behind landing text
 // update css
