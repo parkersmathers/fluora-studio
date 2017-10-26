@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+  $('.landing').on( {
+    'click': function (e) {
+      e.preventDefault()
+    }
+  }, 'a.active')
+
   $('.grid').on( {
 
     'mouseover': function (e) {
