@@ -5,7 +5,7 @@
 <section class="grid <%- current.source == 'work' ? 'active' : 'hidden'%>">
 
 <% Object.entries(work).forEach(function ([cardId, cardData]) { %>
-  <a href="x/<%= cardData.category %>" class="<%= cardData.category %> card">
+  <a href="samples/<%= cardData.category %>" class="<%= cardData.category %> card">
     <div class="<%= cardData.color %> card-content">
       <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
     </div>
