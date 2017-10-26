@@ -2,6 +2,10 @@
 
 <section class='slideshow'>
 
-  <%- partial('' + source + '') %>
+  <% if (source == 'index') { %>
+    <%- partial('index') %>
+  <% } else { %>
+    <%- partial('' + source + '') %>
+  <% } %>
 
 </section>
