@@ -2,7 +2,7 @@
   <%- partial('_landing') %>
 <% } %>
 
-<section class="grid <%- current.source == 'work' ? 'active' : 'hidden'%>">
+<section class="grid <%- current.source == 'work' ? 'active' : 'hidden' %>">
 
 <% Object.entries(work).forEach(function ([cardId, cardData]) { %>
   <a href="samples/<%= cardData.category %>" class="<%= cardData.category %> card">
