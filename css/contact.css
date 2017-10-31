@@ -1,0 +1,63 @@
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  margin: .3em;
+  border: none;
+  position: relative;
+  z-index: 1;
+  vertical-align: top;
+  overflow: hidden;
+  display: flex;
+}
+
+fieldset:first-of-type {
+  margin-bottom: 0;
+}
+
+fieldset:last-of-type {
+  margin-top: 0;
+}
+
+legend, input, textarea {
+  width: 100%;
+  font-size: 1.25em;
+  line-height: 1.5;
+  padding: .5em;
+  flex: 1;
+}
+
+input, textarea {
+  background-color: rgba(170, 170, 170, 0.1);
+  border: none;
+  border-radius: 0;
+  outline: none;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+.button {
+  text-align: left;
+  cursor: pointer;
+  width: 30%;
+  background-color: inherit;
+}
+
+label {
+  visibility: hidden;
+  height: 0px;
+}

@@ -1,15 +1,30 @@
-<form action="https://formspree.io/parker@fluorastudio.com" method="POST">
-  <p>
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name">
-  </p>
-  <p>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email">
-  </p>
-  <p>
-    <label for="message">Message:</label>
-    <textarea name="message" id="message"></textarea>
-  </p>
-  <input type="submit" value="Send">
-</form>
+<div class="form-container">
+  <form action="https://formspree.io/parker@fluorastudio.com" method="POST">
+
+    <% if(environment == "production") { %>
+    <input type="hidden" name="_next" value="http://www.treymoody.com/thanks.html" />
+    <% } else { %>
+    <input type="hidden" name="_next" value="http://localhost:9000/thanks.html" />
+    <% } %>
+
+    <fieldset>
+      <legend>Contact:</legend>
+    </fieldset>
+    <fieldset>
+      <label for="name"><span>Name:</span></label>
+      <input type="text" name="name" placeholder="your name" id="name" required>
+    </fieldset>
+    <fieldset>
+      <label for="email"><span>Email:</span></label>
+      <input type="email" name="_replyto" placeholder="your email address" id="email" required>
+    </fieldset>
+    <fieldset>
+      <label for="message"><span>Message:</span></label>
+      <textarea name="message" rows="5" placeholder="message" id="message" required></textarea>
+    </fieldset>
+    <fieldset>
+      <input class="button" type="submit" value="Send">
+    </fieldset>
+
+  </form>
+</div>
