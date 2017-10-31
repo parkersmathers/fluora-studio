@@ -26,6 +26,7 @@
 
 #slideshow .card {
   flex: 1;
+  padding: 1em;
 }
 
 #slideshow .card-content {
@@ -34,4 +35,25 @@
 
 #slideshow .card-image {
 
+}
+
+#slideshow .card p {
+  font-size: .75em;
+  line-height: 1.5;
+  padding-left: .2em;
+}
+
+#slideshow p:first-of-type {
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 800px) {
+  #slideshow .card-image {
+    width: 381px;
+    height: auto;
+  }
+  #slideshow .card p {
+    font-size: 1em;
+    line-height: 1.4;
+  }
 }
