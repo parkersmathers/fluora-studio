@@ -1,6 +1,37 @@
+.slide-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 #slideshow {
   width: 100%;
+  flex: 1;
   display: flex;
-  justify-content: flex-start;
-  position: relative;
+  align-items: center;
+}
+
+#slideshow .row {
+  flex: 1;
+  display: flex;
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#slideshow .card {
+  flex: 1;
+}
+
+#slideshow .card-content {
+
+}
+
+#slideshow .card-image {
+
 }
