@@ -233,8 +233,8 @@ footer p {
   z-index: 2;
 }
 
-.landing.hidden h1 span a.current,
-.landing.hidden h1 span a.active {
+.landing.hidden h1 span.current,
+.landing.hidden h1 span.active {
   pointer-events: none;
 }
 
