@@ -39,6 +39,7 @@
 }
 
 #slideshow .card p {
+  display: block;
   font-size: .75em;
   line-height: 1.5;
   padding-left: .2em;
