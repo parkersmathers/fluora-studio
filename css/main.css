@@ -37,8 +37,8 @@ a {
 .wrapper {
   height: 100%;
   min-height: 100%;
-  width: 92vw;
-  margin: 0 auto;
+  width: 100%;
+  padding-left: 2vw;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -119,6 +119,7 @@ footer p {
 /* GRID */
 
 .grid {
+  width: 95vw;
   flex: 1;
   display: flex;
   flex-flow: row wrap;
@@ -247,14 +248,10 @@ footer p {
 
 @media screen and (orientation: landscape) {
   .wrapper {
-    width: 80vw;
-    margin: 0 4vw;
-  }
-  .container {
-    height: 80vh;
+    padding-left: 4vw;
   }
   .grid {
-    /*margin-top: -82vh;*/
+    width: 80vw;
   }
   nav, footer, .landing {
     margin-left: 1vw;
