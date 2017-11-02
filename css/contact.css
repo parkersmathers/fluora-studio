@@ -39,7 +39,7 @@ legend, input, textarea {
 }
 
 input, textarea {
-  background-color: rgba(170, 170, 170, 0.1);
+  background-color: rgba(170, 170, 170, 0.2);
   border: none;
   border-radius: 0;
   outline: none;
