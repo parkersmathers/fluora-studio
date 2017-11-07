@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $('.samples').on( {
+  $('.work').on( {
 
     'mouseenter': function (e) {
       // e.preventDefault()
