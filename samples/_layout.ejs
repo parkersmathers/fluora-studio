@@ -15,7 +15,7 @@
         <div class="row">
           <% if(current.source == 'work') { %>
             <%- partial('work') %>
-          <% else %>
+          <% } else { %>
             <%- yield %>
           <% } %>
         </div>
