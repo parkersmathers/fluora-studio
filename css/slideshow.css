@@ -15,9 +15,10 @@
 }
 
 #slideshow .row {
+  overflow-x: scroll;
   flex: 1;
   display: flex;
-  overflow-x: scroll;
+  justify-content: center;
 }
 
 ::-webkit-scrollbar {
@@ -26,7 +27,6 @@
 }
 
 #slideshow .card {
-  flex: 1;
   padding: 1em;
 }
 
@@ -50,6 +50,9 @@
 }
 
 @media screen and (min-width: 800px) {
+  #slideshow .card {
+    padding: 2em;
+  }
   #slideshow .card-image {
     width: 381px;
     height: auto;
