@@ -11,13 +11,15 @@
   </head>
   <body>
     <div class="wrapper">
+
       <%- partial('_nav') %>
-      <div class="container">
-        <%- yield %>
-      </div>
+
+      <%- yield %>
+
       <footer>
         <p>&copy; <%= new Date().getFullYear() %> <%= owner %></p>
       </footer>
+      
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/landing.js"></script>

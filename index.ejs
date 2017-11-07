@@ -1,2 +1,8 @@
-<%- partial('work') %>
-<%- partial('_landing') %>
+<% if (current.source == 'index') { %>
+  <div class="container">
+    <section class="grid hidden">
+      <%- partial('_cards') %>
+    </section>
+      <%- partial('_landing') %>
+  </div>
+<% } %>
