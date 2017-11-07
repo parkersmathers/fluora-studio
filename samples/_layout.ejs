@@ -13,7 +13,11 @@
       <%- partial('../_nav') %>
       <div id="slideshow">
         <div class="row">
-          <%- yield %>
+          <% if(current.source == 'work') { %>
+            <%- partial('work') %>
+          <% else %>
+            <%- yield %>
+          <% } %>
         </div>
       </div>
       <footer>
