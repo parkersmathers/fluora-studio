@@ -8,7 +8,7 @@
 
 #slideshow {
   width: 100%;
-  margin-left: -4vw;
+  margin-left: -2vw;
   flex: 1;
   display: flex;
   align-items: center;
@@ -16,9 +16,12 @@
 
 #slideshow .row {
   overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: mandatory;
   flex: 1;
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 ::-webkit-scrollbar {
@@ -28,6 +31,10 @@
 
 #slideshow .card {
   padding: 1em;
+}
+
+#slideshow div.card:first-child {
+  padding-left: 2em;
 }
 
 #slideshow .card-content {
@@ -50,6 +57,9 @@
 }
 
 @media screen and (min-width: 800px) {
+  #slideshow {
+    margin-left: -4vw;
+  }
   #slideshow .card {
     padding: 2em;
   }
