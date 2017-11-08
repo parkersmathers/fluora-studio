@@ -1,6 +1,13 @@
+<% var path %>
+<% if (current.path[0] == 'index' && current.source == 'index') { %>
+  <% path = 'work/' %>
+<% } else if (current.path[0] == 'work' && current.source == 'index') { %>
+  <% path = '' %>
+<% } %>
+
 <% Object.entries(work).forEach(function ([cardId, cardData]) { %>
 
-  <a href="work/<%= cardData.category %>" class="<%= cardData.category %> card">
+  <a href="<%= path %><%= cardData.category %>" class="<%= cardData.category %> card">
     <div class="<%= cardData.color %> card-content">
       <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
     </div>
