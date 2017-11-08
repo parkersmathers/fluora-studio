@@ -1,19 +1,27 @@
-<% Object.entries(work).forEach(function ([cardId, cardData]) { %>
+<div id="slideshow">
+  <div class="row">
 
-  <% if(cardData.category == current.source) { %>
-    <div class="<%= cardData.category %> card">
-      <div class="<%= cardData.color %> card-content">
-        <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
-        <p>Client: <%= cardData.client %></p>
-        <p>Project: <%= cardData.title %></p>
-        <% if(cardData.contributor) { %>
-          <p>With: <%= cardData.contributor %></p>
-        <% } %>
-        <% if(cardData.award) { %>
-          <p>* <%= cardData.award %></p>
-        <% } %>
-      </div>
-    </div>
-  <% } %>
+    <% Object.entries(work).forEach(function ([cardId, cardData]) { %>
 
-<% }) %>
+      <% if(cardData.category == current.source) { %>
+
+        <div class="<%= cardData.category %> card">
+          <div class="<%= cardData.color %> card-content">
+            <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
+            <p>Client: <%= cardData.client %></p>
+            <p>Project: <%= cardData.title %></p>
+            <% if(cardData.contributor) { %>
+              <p>With: <%= cardData.contributor %></p>
+            <% } %>
+            <% if(cardData.award) { %>
+              <p>* <%= cardData.award %></p>
+            <% } %>
+          </div>
+        </div>
+
+      <% } %>
+
+    <% }) %>
+
+  </div>
+</div>
