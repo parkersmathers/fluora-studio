@@ -3,7 +3,7 @@
 
     <% Object.entries(work).forEach(function ([cardId, cardData]) { %>
 
-      <% if(cardData.category == current.source) { %>
+      <% if(cardData.category == current.source || (current.path[0] == 'samples')) { %>
 
         <div class="<%= cardData.category %> card">
           <div class="<%= cardData.color %> card-content">
