@@ -253,6 +253,56 @@ footer p {
   opacity: .2;
 }
 
+/* card order */
+
+@media screen and (orientation: portrait) {
+  .grid > a:nth-child(1) {
+    order: 1;
+  }
+  .grid > a:nth-child(2) {
+    order: 6;
+  }
+  .grid > a:nth-child(3) {
+    order: 9;
+  }
+  .grid > a:nth-child(4) {
+    order: 8;
+  }
+  .grid > a:nth-child(5) {
+    order: 3;
+  }
+  .grid > a:nth-child(6) {
+    order: 4;
+  }
+  .grid > a:nth-child(7) {
+    order: 5;
+  }
+  .grid > a:nth-child(8) {
+    order: 11;
+  }
+  .grid > a:nth-child(9) {
+    order: 2;
+  }
+  .grid > a:nth-child(10) {
+    order: 7;
+  }
+  .grid > a:nth-child(11) {
+    order: 13;
+  }
+  .grid > a:nth-child(12) {
+    order: 10;
+  }
+  .grid > a:nth-child(13) {
+    order: 12;
+  }
+  .grid > a:nth-child(14) {
+    order: 14;
+  }
+  .grid > a:nth-child(15) {
+    order: 15;
+  }
+}
+
 @media screen and (orientation: landscape) {
   .wrapper {
     padding-left: 4vw;
