@@ -1,7 +1,7 @@
 <div id="slideshow">
   <div class="row">
-  <%_ Object.entries(projects).forEach(function ([cardId, cardData]) { -%>
-    <%_ if (cardData.category == current.source || current.path[0] == "samples") { -%>
+  <%_ Object.entries(samples).forEach(function ([cardId, cardData]) { -%>
+    <%_ if (cardData.category == current.source || current.path[0] == "projects") { -%>
     <div class="<%= cardData.category %> card">
       <div class="<%= cardData.color %> card-content">
         <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
