@@ -4,10 +4,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: -2vw;
 }
 
 form {
-  width: 50vw;
+  width: 80vw;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
 }
@@ -60,4 +62,18 @@ textarea {
 label {
   visibility: hidden;
   height: 0px;
+}
+
+@media screen and (max-width: 750px) {
+  .form-container {
+    padding-right: 2vw;
+    margin-left: 0;
+  }
+  form {
+    width: 100%;
+  }
+  legend, input, textarea {
+    font-size: 1em;
+    line-height: 1.7;
+  }
 }
