@@ -164,6 +164,23 @@ footer p {
   opacity: .05;
 }
 
+/* touch cards */
+
+.touch-card {
+  z-index: 500;
+  position: relative;
+  cursor: pointer;
+  visibility: visible;
+}
+
+.touch-card .card-content {
+  opacity: .8;
+}
+
+.touch-card img {
+  opacity: .1;
+}
+
 /* card colors */
 
 .grid .orchid {
