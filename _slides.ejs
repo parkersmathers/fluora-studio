@@ -1,6 +1,6 @@
 <div id="slideshow">
   <div class="row">
-  <%_ Object.entries(work).forEach(function ([cardId, cardData]) { -%>
+  <%_ Object.entries(projects).forEach(function ([cardId, cardData]) { -%>
     <%_ if (cardData.category == current.source || current.path[0] == "samples") { -%>
     <div class="<%= cardData.category %> card">
       <div class="<%= cardData.color %> card-content">

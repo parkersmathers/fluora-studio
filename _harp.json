@@ -1,7 +1,7 @@
 {
   "globals": {
     "owner": "Fluora Studio",
-    "work": [
+    "projects": [
       {
         "category": "print-design",
         "color": "orchid",

@@ -5,9 +5,9 @@
   <% path = '' %>
 <% } %>
 
-<% Object.entries(work).forEach(function ([cardId, cardData]) { %>
+<% Object.entries(projects).forEach(function ([cardId, cardData]) { %>
 
-  <a href="<%= path %><%= cardData.category %>" class="<%= cardData.category %> card">
+  <a href="<%= path %><%= cardData.category %>.html" class="<%= cardData.category %> card">
     <div class="<%= cardData.color %> card-content">
       <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
     </div>
