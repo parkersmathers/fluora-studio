@@ -118,7 +118,7 @@ footer p {
 .u-l {
   display: inline-block;
   border-bottom: solid .05em; /* fancy underline */
-  line-height: .9;
+  line-height: .8;
 }
 
 .p-br {
@@ -160,7 +160,7 @@ footer p {
   vertical-align: middle;
 }
 
-.grid .card-image {
+.grid.hidden .card-image {
   opacity: .05;
 }
 
@@ -347,7 +347,7 @@ footer p {
   }
   .u-l {
     border-bottom: solid .06em;
-    line-height: .9;
+    line-height: .8;
   }
   .l-br {
     display: inline-block;
