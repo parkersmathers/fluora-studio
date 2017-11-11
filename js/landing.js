@@ -7,32 +7,7 @@ $(document).ready(function () {
     var cards = $('.grid').find('.' + href + '')
     var touchCount = 1
 
-    function process_touchstart(e) {
-      e.data = touchCount
-      switch (e.data) {
-        case 1: handle_one_touch(e); break;
-        case 2: handle_two_touches(e); break;
-      }
-    }
-
-    function handle_one_touch(e) {
-      button.addClass('current z2')
-      cards.addClass('touch-card')
-      touchCount += 1
-    }
-
-    function handle_two_touches(e) {
-      button.removeClass('current z2')
-      cards.removeClass('touch-card')
-      touchCount -= 1
-    }
-
     $(this).on( {
-
-      'touchstart': function (e) {
-        e.preventDefault()
-        process_touchstart(e)
-      },
 
       'mouseenter': function(e) {
         e.preventDefault()
@@ -53,7 +28,7 @@ $(document).ready(function () {
         e.stopPropagation()
         $('.landing').removeClass('active').addClass('hidden')
         cards.removeClass('current z1').addClass('active z1')
-        button.removeClass('current').addClass('active z2')
+        button.removeClass('current z2').addClass('active z2')
         $('a').removeClass('hot')
       }
     }, '.hot')
