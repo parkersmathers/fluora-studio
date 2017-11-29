@@ -5,7 +5,6 @@ $(document).ready(function () {
     var link = button.find('a')
     var href = link.attr('href')
     var cards = $('.grid').find('.' + href + '')
-    var touchCount = 1
 
     $(this).on( {
 
