@@ -1,7 +1,48 @@
 $(document).ready(function () {
   var cat, button, opaque, faded
+  var touchCountGrid = 1
+  var targetGrid
+
+  function handleOneTouchCards(e) {
+    // console.log('one');
+    // console.log(e);
+    // console.log(targetGrid);
+    if ((targetGrid || $(e.currentTarget).hasClass('current')) && (targetGrid !== e.target)) {
+      $(targetGrid).trigger('mouseout')
+      targetGrid = e.target
+      $(targetGrid).trigger('mouseover')
+    } else {
+      targetGrid = e.target
+      $(targetGrid).trigger('mouseover')
+    }
+    touchCountGrid++
+  }
+
+  function handleTwoTouchesCards(e) {
+    // console.log('two');
+    // console.log(e);
+    // console.log(targetGrid);
+    if (e.target === targetGrid || $(e.currentTarget).hasClass('current')) {
+      $(targetGrid).trigger('click')
+      targetGrid = undefined
+      touchCountGrid--
+    } else {
+      $(targetGrid).trigger('mouseout')
+      targetGrid = e.target
+      $(targetGrid).trigger('mouseover')
+    }
+  }
 
   $('.container').on( {
+
+    'touchstart': function (e) {
+      e.preventDefault()
+      switch (touchCountGrid) {
+        case 1: handleOneTouchCards(e); break;
+        case 2: handleTwoTouchesCards(e); break;
+        default: console.log('not supported'); break;
+      }
+    },
 
     'mouseenter': function(e) {
       e.preventDefault()
@@ -23,6 +64,7 @@ $(document).ready(function () {
     },
     'click': function (e) {
       e.preventDefault()
+      console.log(e);
       $('.grid').removeClass('active').addClass('hidden')
       $('.landing').addClass('z2')
       faded.removeClass('faded')

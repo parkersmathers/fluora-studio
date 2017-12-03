@@ -2,16 +2,10 @@ $(document).ready(function () {
   var touchCountCards = 1
   var targetCard
 
-  $('.landing').on( {
-    'click': function (e) {
-      e.preventDefault()
-    }
-  }, 'a.active')
-
   function handleOneTouchCards(e) {
-    console.log('one');
-    console.log(e);
-    console.log(targetCard);
+    // console.log('one');
+    // console.log(e);
+    // console.log(targetCard);
     if (targetCard && (targetCard !== e.target)) {
       $(targetCard).trigger('mouseout')
       targetCard = e.target
@@ -24,9 +18,9 @@ $(document).ready(function () {
   }
 
   function handleTwoTouchesCards(e) {
-    console.log('two');
-    console.log(e);
-    console.log(targetCard);
+    // console.log('two');
+    // console.log(e);
+    // console.log(targetCard);
     if (e.target === targetCard) {
       $(targetCard).trigger('click')
       targetCard = undefined
@@ -57,4 +51,11 @@ $(document).ready(function () {
       $(this).find('img').removeAttr('style')
     }
   }, '.card.active')
+
+  $('.landing').on( {
+    'click': function (e) {
+      e.preventDefault()
+    }
+  }, 'a.active')
+
 })
