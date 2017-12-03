@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  var touchCountCards = 1
+  var targetCard
 
   $('.landing').on( {
     'click': function (e) {
@@ -6,7 +8,46 @@ $(document).ready(function () {
     }
   }, 'a.active')
 
+  function handleOneTouchCards(e) {
+    console.log('one');
+    console.log(e);
+    console.log(targetCard);
+    if (targetCard && (targetCard !== e.target)) {
+      $(targetCard).trigger('mouseout')
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
+    } else {
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
+    }
+    touchCountCards++
+  }
+
+  function handleTwoTouchesCards(e) {
+    console.log('two');
+    console.log(e);
+    console.log(targetCard);
+    if (e.target === targetCard) {
+      $(targetCard).trigger('click')
+      targetCard = undefined
+      touchCountCards--
+    } else {
+      $(targetCard).trigger('mouseout')
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
+    }
+  }
+
   $('.grid').on( {
+
+    'touchstart': function (e) {
+      e.preventDefault()
+      switch (touchCountCards) {
+        case 1: handleOneTouchCards(e); break;
+        case 2: handleTwoTouchesCards(e); break;
+        default: console.log('not supported'); break;
+      }
+    },
 
     'mouseover': function (e) {
       $(this).find('img').css('opacity', 1)
