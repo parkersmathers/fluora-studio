@@ -64,7 +64,6 @@ $(document).ready(function () {
     },
     'click': function (e) {
       e.preventDefault()
-      console.log(e);
       $('.grid').removeClass('active').addClass('hidden')
       $('.landing').addClass('z2')
       faded.removeClass('faded')
