@@ -2,16 +2,28 @@ $(document).ready(function () {
   var touchCountLanding = 1
   var target
 
+  // Handle touch events for switching views: landing -> cards
+
+  $('.container').on( {
+    'touchstart': function (e) {
+      e.preventDefault()
+      $('.landing').removeClass('active z2').addClass('hidden')
+      $('.current').removeClass('current').addClass('active')
+      $('.touch-card').removeClass('touch-card').addClass('active z1')
+    }
+  }, '.touch-card')
+
+  // Handle events for hovering over links and switching views: landing -> cards
+
   $('h1 span').each(function () {
     var button = $(this)
     var link = button.find('a')
     var href = link.attr('href')
     var cards = $('.grid').find('.' + href + '')
 
+    // Handle touch events
+
     function handleOneTouch(e) {
-      // console.log('one');
-      // console.log(e);
-      // console.log(target);
       if (target && (target !== e.target)) {
         $(target).trigger('mouseout')
         target = e.target
@@ -20,21 +32,18 @@ $(document).ready(function () {
         target = e.target
         $(target).trigger('mouseover')
       }
+      cards.removeClass('current z1').addClass('touch-card')
       touchCountLanding++
     }
 
     function handleTwoTouches(e) {
-      // console.log('two');
-      // console.log(e);
-      // console.log(target);
       if (e.target === target) {
         $(target).trigger('click')
-        target = undefined
-        touchCountLanding--
       } else {
         $(target).trigger('mouseout')
         target = e.target
         $(target).trigger('mouseover')
+        cards.removeClass('current z1').addClass('touch-card')
       }
     }
 
@@ -50,6 +59,8 @@ $(document).ready(function () {
       }
     })
 
+    // Handle mouse events
+
     $(this).on( {
 
       'mouseover': function (e) {
@@ -63,7 +74,7 @@ $(document).ready(function () {
         e.preventDefault()
         e.stopPropagation()
         button.removeClass('current z2')
-        cards.removeClass('current z1')
+        cards.removeClass('current z1 touch-card')
         $('.landing').removeClass('z2')
       },
       'click': function (e) {
@@ -76,16 +87,5 @@ $(document).ready(function () {
       }
     }, '.hot')
 
-    $('a.taphover').on('touchstart', function (e) {
-      var link = $(this); //preselect the link
-      if (link.hasClass('hover')) {
-        return true;
-      } else {
-        link.addClass('hover');
-        $('a.taphover').not(this).removeClass('hover');
-        e.preventDefault();
-        return false; //extra, and to make sure the function has consistent return points
-      }
-    });
   })
 })
