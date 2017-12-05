@@ -1,6 +1,26 @@
 $(document).ready(function () {
+  var touchCountHere = 1
 
-  $('.work').on( {
+  function handleOneTouch(e) {
+    e.preventDefault()
+    $(e.target).trigger('mouseleave')
+    $(e.target).trigger('mouseenter')
+    touchCountHere++
+  }
+
+  function handleTwoTouches(e) {
+    $(e.target).click()
+  }
+
+  $('#work').on( {
+
+    'touchstart': function (e) {
+      switch (touchCountHere) {
+        case 1: handleOneTouch(e); break;
+        case 2: handleTwoTouches(e); break;
+        default: console.log('not supported'); break;
+      }
+    },
 
     'mouseenter': function (e) {
       // e.preventDefault()

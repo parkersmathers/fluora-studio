@@ -15,7 +15,7 @@ $(document).ready(function () {
 
   // Handle events for hovering over links and switching views: landing -> cards
 
-  $('h1 span').each(function () {
+  $('h1 span.f-b').each(function () {
     var button = $(this)
     var link = button.find('a')
     var href = link.attr('href')
