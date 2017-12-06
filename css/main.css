@@ -108,6 +108,7 @@ footer p {
 .landing,
 .landing.hidden {
   position: absolute;
+  margin-top: 3vw;
 }
 
 .landing h1 {
@@ -134,18 +135,23 @@ footer p {
 
 .grid {
   width: 90vw;
-  margin-left: -3vw;
-  margin-top: -3vh;
-  display: flex;
+  margin-left: -2vw;
+  flex: 1;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2vw;
+  /*display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: flex-start;
-  align-self: center;
+  align-self: center;*/
 }
 
 .grid .card {
-  flex: 1 0 33.3333%;
-  padding: 1vw;
+  border: none;
+  /*flex: 1 0 33.3333%;*/
+  /*padding: 1vw;*/
 }
 
 .grid .card-content {
@@ -335,8 +341,9 @@ footer p {
   .grid {
     width: 75vw;
     margin-left: 0;
-    margin-top: -2vh;
     align-self: flex-start;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: .1em;
   }
   nav, footer, .landing {
     margin-left: 1vw;
