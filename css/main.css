@@ -49,11 +49,11 @@ a {
 }
 
 #page {
-  width: 90%;
+  width: 100%;
   height: 100%;
   min-height: 100%;
-  margin: 0 auto;
-  /*padding-left: 2vw;*/
+  /*margin: 0 auto;*/
+  padding-left: 2vw;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -61,39 +61,40 @@ a {
 }
 
 nav, footer, .landing {
-  /*margin-left: 3vw;*/
+  margin-left: 4vw;
 }
 
-/* HEADER */
-
-nav {
+nav, footer {
   width: 100%;
-  height: 6vh;
+  height: 7vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+/*
+HEADER
+*/
 
 nav h2 {
-  font-size: 4vw;
+  font-size: 5vw;
 }
 
-/* FOOTER */
+/*
+FOOTER
+*/
 
 footer {
-  width: 100%;
-  height: 8vh;
   margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 footer p {
   font-size: 3vw;
 }
 
-/* container */
+/*
+MAIN
+*/
 
 .container {
   width: 100%;
@@ -104,23 +105,20 @@ footer p {
   position: relative;
 }
 
-/* LANDING */
+/*
+LANDING
+*/
 
 .landing,
 .landing.hidden {
+  width: 100%;
   position: absolute;
-  margin-top: 1.5em;
+  margin-top: 1vh;
 }
 
 .landing h1 {
   font-size: 6.5vw;
   line-height: 1.6;
-}
-
-.u-l {
-  display: inline-block;
-  border-bottom: solid .05em; /* fancy underline */
-  line-height: .8;
 }
 
 .p-br {
@@ -131,15 +129,24 @@ footer p {
   display: none; /* hidden in landscape view */
 }
 
-/* GRID */
+.u-l {
+  display: inline-block;
+  border-bottom: solid .05em; /* fancy underline */
+  line-height: .8;
+}
+
+/*
+GRID
+*/
 
 .grid {
-  width: 90vw;
+  width: 88vw;
   margin-left: -2vw;
   flex: 1;
   align-self: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
   grid-gap: 2vw;
   /*display: flex;
   flex-flow: row wrap;
