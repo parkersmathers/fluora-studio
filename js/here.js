@@ -3,8 +3,8 @@ $(document).ready(function () {
 
   function handleOneTouch(e) {
     e.preventDefault()
-    $(e.target).trigger('mouseleave')
     $(e.target).trigger('mouseenter')
+    $(e.target).addClass('active-here')
     touchCountHere++
   }
 

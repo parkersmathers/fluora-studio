@@ -15,7 +15,7 @@ $(document).ready(function () {
 
   // Handle events for hovering over links and switching views: landing -> cards
 
-  $('h1 span.f-b').each(function () {
+  $('h1 span').each(function () {
     var button = $(this)
     var link = button.find('a')
     var href = link.attr('href')
@@ -24,7 +24,11 @@ $(document).ready(function () {
     // Handle touch events
 
     function handleOneTouch(e) {
-      if (target && (target !== e.target)) {
+      if ($('#work').hasClass('active-here')) {
+        $('.grid').removeAttr('style')
+        $('.card-content').removeAttr('style')
+        $('.card-image').removeAttr('style')
+      } else if (target && (target !== e.target)) {
         $(target).trigger('mouseout')
         target = e.target
         $(target).trigger('mouseover')
@@ -57,7 +61,7 @@ $(document).ready(function () {
           default: console.log('not supported'); break;
         }
       }
-    })
+    }, '.hot')
 
     // Handle mouse events
 

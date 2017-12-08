@@ -24,11 +24,11 @@
 }
 
 #slideshow div.card:first-child {
-  padding-left: 9vw;
+  /*padding-left: 9vw;*/
 }
 
 #slideshow div.card:last-child {
-  padding-right: 10vw;
+  /*padding-right: 10vw;*/
 }
 
 #slideshow .card-content {
@@ -58,8 +58,11 @@
   #slideshow .card {
     padding: 2em;
   }
+  #slideshow div.card:first-child {
+    padding-left: 7vw;
+  }
   #slideshow div.card:last-child {
-    padding-right: 2vw;
+    padding-right: 7vw;
   }
   #slideshow .card-image {
     width: 33.33vw;
