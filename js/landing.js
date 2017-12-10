@@ -1,19 +1,13 @@
 $(document).ready(function () {
+
+  //
+  // Handle mouse and touch events for landing links and touch cards
+  //
+
   var touchCountLanding = 1
   var target
 
-  // Handle touch events for switching views: landing -> cards
-
-  $('.container').on( {
-    'touchstart': function (e) {
-      e.preventDefault()
-      $('.landing').removeClass('active z2').addClass('hidden')
-      $('.current').removeClass('current').addClass('active')
-      $('.touch-card').removeClass('touch-card').addClass('active z1')
-    }
-  }, '.touch-card')
-
-  // Handle events for hovering over links and switching views: landing -> cards
+  // Handle events for hovering over links and switching views
 
   $('h1 span').each(function () {
     var button = $(this)
@@ -21,15 +15,14 @@ $(document).ready(function () {
     var href = link.attr('href')
     var cards = $('.grid').find('.' + href + '')
 
-    // Handle touch events
+    // Handle touch events on links
 
-    function handleOneTouch(e) {
+    function handleOneTouchLinks(e) {
       if ($('.card-content').hasClass('all-gray')) {
+        touchCountHere--
         $('h1 span a#work').trigger('mouseout')
-        // $('.grid').removeAttr('style')
-        // $('.card-content').removeAttr('style')
-        // $('.card-image').removeAttr('style')
-      } else if (target && (target !== e.target)) {
+      }
+      if (target && (target !== e.target)) {
         $(target).trigger('mouseout')
         target = e.target
         $(target).trigger('mouseover')
@@ -41,7 +34,11 @@ $(document).ready(function () {
       touchCountLanding++
     }
 
-    function handleTwoTouches(e) {
+    function handleTwoTouchesLinks(e) {
+      if ($('.card-content').hasClass('all-gray')) {
+        $('h1 span a#work').trigger('mouseout')
+        touchCountHere--
+      }
       if (e.target === target) {
         $(target).trigger('click')
       } else {
@@ -57,8 +54,8 @@ $(document).ready(function () {
       'touchstart': function (e) {
         e.preventDefault()
         switch (touchCountLanding) {
-          case 1: handleOneTouch(e); break;
-          case 2: handleTwoTouches(e); break;
+          case 1: handleOneTouchLinks(e); break;
+          case 2: handleTwoTouchesLinks(e); break;
           default: console.log('not supported'); break;
         }
       }
@@ -91,6 +88,64 @@ $(document).ready(function () {
         $('a').removeClass('hot')
       }
     }, '.hot')
+  })
 
+  // Handle touch events on cards
+
+  $('.container').on( {
+    'touchstart': function (e) {
+      e.preventDefault()
+      $('.landing').removeClass('active z2').addClass('hidden')
+      $('.current').removeClass('current').addClass('active')
+      $('.touch-card').removeClass('touch-card').addClass('active z1')
+    }
+  }, '.touch-card')
+
+  //
+  // Handle mouse and touch events on 'here' button
+  //
+
+  var touchCountHere = 1
+
+  function handleOneTouchHere(e) {
+    e.preventDefault()
+    $(e.target).trigger('mouseover')
+    touchCountHere++
+  }
+
+  function handleTwoTouchesHere(e) {
+    $(e.target).click()
+  }
+
+  $('#work').on( {
+
+    'touchstart': function (e) {
+      switch (touchCountHere) {
+        case 1: handleOneTouchHere(e); break;
+        case 2: handleTwoTouchesHere(e); break;
+        default: console.log('not supported'); break;
+      }
+    },
+
+    'mouseover': function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      $('.landing').addClass('z2')
+      $('h1 span.current.z2').removeClass('current z2')
+      $('.card')
+        .addClass('current z1')
+        .children().addClass('all-gray')
+        .children().addClass('hidden')
+    },
+
+    'mouseout': function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      $('.landing').removeClass('z2')
+      $('.card')
+        .removeClass('current z1')
+        .children().removeClass('all-gray')
+        .children().removeClass('hidden')
+    }
   })
 })
