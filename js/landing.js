@@ -24,10 +24,11 @@ $(document).ready(function () {
     // Handle touch events
 
     function handleOneTouch(e) {
-      if ($('#work').hasClass('active-here')) {
-        $('.grid').removeAttr('style')
-        $('.card-content').removeAttr('style')
-        $('.card-image').removeAttr('style')
+      if ($('.card-content').hasClass('all-gray')) {
+        $('h1 span a#work').trigger('mouseout')
+        // $('.grid').removeAttr('style')
+        // $('.card-content').removeAttr('style')
+        // $('.card-image').removeAttr('style')
       } else if (target && (target !== e.target)) {
         $(target).trigger('mouseout')
         target = e.target

@@ -61,7 +61,7 @@ a {
 }
 
 nav, footer, .landing {
-  margin-left: 4vw;
+  margin-left: 7vw;
 }
 
 nav, footer {
@@ -98,11 +98,12 @@ MAIN
 
 .container {
   width: 100%;
+  /*height: 86vh;*/
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  position: relative;
 }
 
 /*
@@ -113,12 +114,12 @@ LANDING
 .landing.hidden {
   width: 100%;
   position: absolute;
-  margin-top: 1vh;
+  margin-top: 3vh;
 }
 
 .landing h1 {
-  font-size: 6.5vw;
-  line-height: 1.6;
+  font-size: 6.4vw;
+  line-height: 1.7;
 }
 
 .p-br {
@@ -140,13 +141,13 @@ GRID
 */
 
 .grid {
-  width: 88vw;
+  width: 88%;
   margin-left: -2vw;
-  flex: 1;
+  /*flex: 1;*/
   align-self: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  /*grid-template-rows: auto;*/
   grid-gap: 2vw;
   /*display: flex;
   flex-flow: row wrap;
@@ -157,19 +158,22 @@ GRID
 
 .grid .card {
   border: none;
+  display: flex;
   /*flex: 1 0 33.3333%;*/
   /*padding: 1vw;*/
 }
 
 .grid .card-content {
-  display: block;
+  /*display: block;
   width: 100%;
-  height: 100%;
+  height: 100%;*/
 }
 
 .grid .card-image {
   width: 100%;
-  height: 100%;
+  min-width: 50px;
+  /*height: 100%;*/
+  height: auto;
   vertical-align: middle;
 }
 
@@ -223,6 +227,10 @@ GRID
 
 .grid .rose {
   background-color: rgb(182, 126, 119);
+}
+
+.card .card-content.all-gray {
+  background-color: rgba(170, 170, 170, 0.2);
 }
 
 /* jQuery play for landing-grid hover-toggle */

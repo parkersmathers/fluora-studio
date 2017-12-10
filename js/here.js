@@ -3,8 +3,7 @@ $(document).ready(function () {
 
   function handleOneTouch(e) {
     e.preventDefault()
-    $(e.target).trigger('mouseenter')
-    $(e.target).addClass('active-here')
+    $(e.target).trigger('mouseover')
     touchCountHere++
   }
 
@@ -22,20 +21,28 @@ $(document).ready(function () {
       }
     },
 
-    'mouseenter': function (e) {
-      // e.preventDefault()
-      // e.stopPropagation()
-      $('.grid').css('visibility', 'visible')
-      $('.card-content').css('background-color', 'rgba(170, 170, 170, 0.2)')
-      $('.card-image').css('opacity', 0)
+    'mouseover': function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      // $('.grid').css('visibility', 'visible')
+      // $('.card-content').css('background-color', 'rgba(170, 170, 170, 0.2)')
+      // $('.card-image').css('opacity', 0)
+      $('.landing').addClass('z2')
+      $('h1 span.current.z2').removeClass('current z2')
+      $('.card')
+        .addClass('current z1')
+        .children().addClass('all-gray')
+        .children().addClass('hidden')
     },
 
-    'mouseleave': function (e) {
-      // e.preventDefault()
-      // e.stopPropagation()
-      $('.grid').removeAttr('style')
-      $('.card-content').removeAttr('style')
-      $('.card-image').removeAttr('style')
+    'mouseout': function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      // $('.grid').removeAttr('style')
+      // $('.card-content').removeAttr('style')
+      // $('.card-image').removeAttr('style')
+      $('.landing').removeClass('z2')
+      $('.card').removeClass('current z1').children().removeClass('all-gray').children().removeClass('hidden')
     }
   })
 })
