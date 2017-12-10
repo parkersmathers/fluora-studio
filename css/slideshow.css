@@ -1,7 +1,8 @@
 #slideshow {
-  width: 100%;
+  width: 100vw;
   margin-left: -2vw;
   flex: 1;
+  align-self: flex-start;
   display: flex;
   align-items: center;
 }
