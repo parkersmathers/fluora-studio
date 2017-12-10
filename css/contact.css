@@ -1,6 +1,7 @@
 .form-container {
   width: 94vw;
   max-width: 900px;
+  margin-top: 2vh;
   /*margin: 0 auto;*/
   /*padding-right: 2vw;*/
 }
