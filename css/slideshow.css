@@ -16,8 +16,9 @@
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+  width: 0px;
+  display: none;
+  background: transparent;
 }
 
 #slideshow .card {
@@ -52,7 +53,13 @@
   margin-top: 1em;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (orientation: landscape) {
+  #slideshow .card-image {
+    width: 33.33vw;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 800px) {
   #slideshow {
     margin-left: -4vw;
   }
@@ -63,10 +70,7 @@
     padding-left: 7vw;
   }
   #slideshow div.card:last-child {
-    padding-right: 7vw;
-  }
-  #slideshow .card-image {
-    width: 33.33vw;
+    /*padding-right: 7vw;*/
   }
   #slideshow .card p {
     font-size: 1em;
