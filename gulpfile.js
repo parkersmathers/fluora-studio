@@ -1,60 +1,17 @@
-var gulp = require('gulp');
-var harp = require('harp')
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var deploy = require('gulp-gh-pages');
-var shell = require('gulp-shell');
-var imagemin = require('gulp-imagemin');
-var jpegRecompress = require('imagemin-jpeg-recompress')
-var concat = require('gulp-concat')
-var cleanCss = require('gulp-clean-css')
-var uglify = require('gulp-uglify')
-var rev = require('gulp-rev')
-
-/**
-* Optimize build assets
-*/
-
-// js & css
-gulp.task('js', function () {
-	return gulp.src(['public/js/jquery*.js', 'public/js/landing.js', 'public/js/grid*.js', 'public/cards.js'])
-		.pipe(concat('bundle.js'))
-    .pipe(uglify())
-    .pipe(rev())
-		.pipe(gulp.dest('dist/js'))
-    .pipe(rev.manifest('dist/rev-manifest.json', {
-      merge: true
-    }))
-    .pipe(gulp.dest(''))
-});
-
-gulp.task('css', function () {
-	return gulp.src(['public/css/main.css', 'public/css/slideshow.css', 'public/css/contact.css'])
-		.pipe(concat('stylesheet.css'))
-    .pipe(cleanCss())
-    .pipe(rev())
-		.pipe(gulp.dest('dist/css'))
-    .pipe(rev.manifest('dist/rev-manifest.json', {
-      merge: true
-    }))
-    .pipe(gulp.dest(''))
-});
-
-// images
-gulp.task('images', function() {
-  gulp.src('images/*.jpg')
-  .pipe(imagemin([
-    jpegRecompress({
-      loops: 2,
-      min: 50,
-      max: 85,
-      progressive: true
-    })
-  ], {
-    verbose: true
-  }))
-  .pipe(gulp.dest('public/images/'))
-})
+var gulp = require('gulp'),
+    harp = require('harp'),
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload,
+    deploy = require('gulp-gh-pages'),
+    shell = require('gulp-shell'),
+    imagemin = require('gulp-imagemin'),
+    jpegRecompress = require('imagemin-jpeg-recompress'),
+    concat = require('gulp-concat'),
+    cleanCss = require('gulp-clean-css'),
+    uglify = require('gulp-uglify'),
+    rev = require('gulp-rev'),
+    del = require('del'),
+    changed = require('gulp-changed')
 
 /**
  * Serve the Harp Site
@@ -66,13 +23,13 @@ gulp.task('serve', function() {
     browserSync({
       proxy: "localhost:9000",
       open: false,
-      /* Hide the notification. It gets annoying */
+      /* Hide the notification */
       notify: {
         styles: ['opacity: 0', 'position: absolute']
       }
-    });
+    })
     /**
-     * Watch for sass changes, tell BrowserSync to refresh main.css
+     * tell BrowserSync to refresh main.css
      */
     gulp.watch("public/**/*.css", function() {
       reload("main.css", {
@@ -88,11 +45,9 @@ gulp.task('serve', function() {
   })
 });
 
-
 /**
  * Serve the site in production
  */
-
 gulp.task('production', function() {
   return gulp.src('')
     .pipe(shell([
@@ -101,12 +56,65 @@ gulp.task('production', function() {
 });
 
 /**
- * Build the Harp Site
+ * BUILD tasks
  */
-gulp.task('build', function() {
+
+gulp.task('clean', function() {
+  return del.sync('dist');
+});
+
+/**
+ * Optimize assets
+ */
+gulp.task('js', function() {
+  return gulp.src(['public/js/jquery*.js', 'public/js/landing.js', 'public/js/grid*.js', 'public/cards.js'])
+    .pipe(concat('bundle.js'))
+    .pipe(uglify())
+    .pipe(rev())
+    .pipe(gulp.dest('dist/js'))
+    .pipe(rev.manifest('dist/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(gulp.dest(''))
+});
+
+gulp.task('css', function() {
+  return gulp.src(['public/css/main.css', 'public/css/slideshow.css', 'public/css/contact.css'])
+    .pipe(concat('stylesheet.css'))
+    .pipe(cleanCss())
+    .pipe(rev())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(rev.manifest('dist/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(gulp.dest(''))
+});
+
+gulp.task('images', function() {
+  var imgSrc = 'images/*.+(png|jpg|gif|)',
+      imgDest = 'public/images'
+
+  return gulp.src(imgSrc)
+    .pipe(changed(imgDest))
+    .pipe(imagemin([
+      jpegRecompress({
+        loops: 2,
+        min: 50,
+        max: 85
+      })
+    ], {
+      verbose: true
+    }))
+    .pipe(gulp.dest(imgDest))
+})
+
+/**
+ * Build the Harp site
+ */
+gulp.task('build', ['clean', 'js', 'css', 'images'], function() {
   return gulp.src('public/')
     .pipe(shell([
-      'harp compile public/ dist/'
+      'harp compile ./ dist/'
     ]))
 });
 
