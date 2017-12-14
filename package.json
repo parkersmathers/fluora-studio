@@ -1,0 +1,20 @@
+{
+  "name": "harpsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://par-ker@bitbucket.org/par-ker/harpsite.git",
+  "author": "Parker <parkersmathers@yahoo.com>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/par-ker/harpsite#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "harp": "^0.25.0"
+  },
+  "dependencies": {}
+}
