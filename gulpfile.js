@@ -9,7 +9,7 @@ var jpegRecompress = require('imagemin-jpeg-recompress')
 var concat = require('gulp-concat')
 var cleanCss = require('gulp-clean-css')
 var uglify = require('gulp-uglify')
-
+var rev = require('gulp-rev')
 
 /**
 * Optimize build assets
@@ -20,14 +20,24 @@ gulp.task('js', function () {
 	return gulp.src(['public/js/jquery*.js', 'public/js/landing.js', 'public/js/grid*.js', 'public/cards.js'])
 		.pipe(concat('bundle.js'))
     .pipe(uglify())
-		.pipe(gulp.dest('dist/js'));
+    .pipe(rev())
+		.pipe(gulp.dest('dist/js'))
+    .pipe(rev.manifest('dist/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(gulp.dest(''))
 });
 
 gulp.task('css', function () {
 	return gulp.src(['public/css/main.css', 'public/css/slideshow.css', 'public/css/contact.css'])
 		.pipe(concat('stylesheet.css'))
     .pipe(cleanCss())
-		.pipe(gulp.dest('dist/css'));
+    .pipe(rev())
+		.pipe(gulp.dest('dist/css'))
+    .pipe(rev.manifest('dist/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(gulp.dest(''))
 });
 
 // images
