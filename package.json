@@ -13,9 +13,12 @@
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^4.0.0",
     "gulp-shell": "^0.6.3",
+    "gulp-uglify": "^3.0.0",
     "harp": "^0.25.0",
     "imagemin-jpeg-recompress": "^5.1.0"
   },

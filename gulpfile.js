@@ -6,7 +6,45 @@ var deploy = require('gulp-gh-pages');
 var shell = require('gulp-shell');
 var imagemin = require('gulp-imagemin');
 var jpegRecompress = require('imagemin-jpeg-recompress')
+var concat = require('gulp-concat')
+var cleanCss = require('gulp-clean-css')
+var uglify = require('gulp-uglify')
 
+
+/**
+* Optimize build assets
+*/
+
+// js & css
+gulp.task('js', function () {
+	return gulp.src(['public/js/jquery*.js', 'public/js/landing.js', 'public/js/grid*.js', 'public/cards.js'])
+		.pipe(concat('bundle.js'))
+    .pipe(uglify())
+		.pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('css', function () {
+	return gulp.src(['public/css/main.css', 'public/css/slideshow.css', 'public/css/contact.css'])
+		.pipe(concat('stylesheet.css'))
+    .pipe(cleanCss())
+		.pipe(gulp.dest('dist/css'));
+});
+
+// images
+gulp.task('images', function() {
+  gulp.src('images/*.jpg')
+  .pipe(imagemin([
+    jpegRecompress({
+      loops: 2,
+      min: 50,
+      max: 85,
+      progressive: true
+    })
+  ], {
+    verbose: true
+  }))
+  .pipe(gulp.dest('public/images/'))
+})
 
 /**
  * Serve the Harp Site
@@ -40,24 +78,6 @@ gulp.task('serve', function() {
   })
 });
 
-/**
- * Optimize images
- */
-
-gulp.task('images', function() {
-  gulp.src('images/*.jpg')
-    .pipe(imagemin([
-      jpegRecompress({
-        loops: 2,
-        min: 50,
-        max: 85,
-        progressive: true
-      })
-    ], {
-      verbose: true
-    }))
-    .pipe(gulp.dest('public/images/'))
-})
 
 /**
  * Serve the site in production
@@ -84,7 +104,7 @@ gulp.task('build', function() {
  * Push build to gh-pages
  */
 gulp.task('deploy', ['build'], function() {
-  return gulp.src("./dist/**/*")
+  return gulp.src("dist/**/*")
     .pipe(deploy())
 });
 
