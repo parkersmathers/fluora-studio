@@ -44,7 +44,6 @@ gulp.task('serve', function() {
     });
   })
 });
-
 /**
  * Serve the site in production
  */
@@ -54,20 +53,43 @@ gulp.task('production', function() {
       'NODE_ENV=production sudo harp server --port 80'
     ]))
 });
+/**
+ * Build the Harp site
+ */
+gulp.task('build', function() {
+  return gulp.src('public/')
+    .pipe(shell([
+      'harp compile public/ build/'
+    ]))
+});
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', ['build'], function() {
+  return gulp.src("dist/**/*")
+    .pipe(deploy())
+});
+/**
+ * Default task, running `gulp` will fire up the Harp site,
+ * launch BrowserSync & watch files.
+ */
+gulp.task('default', ['serve']);
+
 
 /**
- * BUILD tasks
+ * Optimize build assets
  */
 
+// Delete files
 gulp.task('clean', function() {
-  return del.sync('dist');
+  return del.sync('build');
 });
 
 /**
- * Optimize assets
+ * Optimize js and css
  */
 gulp.task('js', function() {
-  return gulp.src(['public/js/jquery*.js', 'public/js/landing.js', 'public/js/grid*.js', 'public/cards.js'])
+  return gulp.src(['build/js/jquery*.js', 'build/js/landing.js', 'build/js/grid*.js', 'build/cards.js'])
     .pipe(concat('bundle.js'))
     .pipe(uglify())
     .pipe(rev())
@@ -79,7 +101,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('css', function() {
-  return gulp.src(['public/css/main.css', 'public/css/slideshow.css', 'public/css/contact.css'])
+  return gulp.src(['build/css/main.css', 'build/css/slideshow.css', 'build/css/contact.css'])
     .pipe(concat('stylesheet.css'))
     .pipe(cleanCss())
     .pipe(rev())
@@ -90,13 +112,19 @@ gulp.task('css', function() {
     .pipe(gulp.dest(''))
 });
 
+// Compress images for app
+
 gulp.task('images', function() {
   var imgSrc = 'images/*.+(png|jpg|gif|)',
       imgDest = 'public/images'
 
-  return gulp.src(imgSrc)
-    .pipe(changed(imgDest))
+  return gulp.src('images/*.+(png|jpg|gif|)')
+    // .pipe(changed(imgDest))
     .pipe(imagemin([
+      imagemin.gifsicle({
+        interlaced: true,
+        optimizationLevel: 3
+      }),
       jpegRecompress({
         loops: 2,
         min: 50,
@@ -108,26 +136,4 @@ gulp.task('images', function() {
     .pipe(gulp.dest(imgDest))
 })
 
-/**
- * Build the Harp site
- */
-gulp.task('build', ['clean', 'js', 'css', 'images'], function() {
-  return gulp.src('public/')
-    .pipe(shell([
-      'harp compile ./ dist/'
-    ]))
-});
-
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', ['build'], function() {
-  return gulp.src("dist/**/*")
-    .pipe(deploy())
-});
-
-/**
- * Default task, running `gulp` will fire up the Harp site,
- * launch BrowserSync & watch files.
- */
-gulp.task('default', ['serve']);
+gulp.task('distribute', ['clean', 'css', 'js'])
