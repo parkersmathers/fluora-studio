@@ -1,3 +1,7 @@
+#slideshow.display-none {
+  display: none;
+}
+
 #slideshow {
   width: 100vw;
   margin-left: -2vw;

@@ -89,7 +89,7 @@ footer p {
 MAIN
 */
 
-.container {
+#main {
   width: 100%;
   position: relative;
   flex: 1;

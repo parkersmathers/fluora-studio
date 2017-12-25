@@ -33,7 +33,7 @@ $(document).ready(function () {
     }
   }
 
-  $('.container').on( {
+  $('#main').on( {
 
     'touchstart': function (e) {
       e.preventDefault()

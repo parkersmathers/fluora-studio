@@ -30,7 +30,7 @@ $(document).ready(function () {
         target = e.target
         $(target).trigger('mouseover')
       }
-      cards.removeClass('current z1').addClass('touch-card')
+      // cards.removeClass('current z1').addClass('touch-card')
       touchCountLanding++
     }
 
@@ -45,7 +45,7 @@ $(document).ready(function () {
         $(target).trigger('mouseout')
         target = e.target
         $(target).trigger('mouseover')
-        cards.removeClass('current z1').addClass('touch-card')
+        // cards.removeClass('current z1').addClass('touch-card')
       }
     }
 
@@ -92,7 +92,7 @@ $(document).ready(function () {
 
   // Handle touch events on cards
 
-  $('.container').on( {
+  $('#main').on( {
     'touchstart': function (e) {
       e.preventDefault()
       $('.landing').removeClass('active z2').addClass('hidden')
