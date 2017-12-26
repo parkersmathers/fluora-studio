@@ -18,7 +18,6 @@ function loadContent(href) {
     .fadeOut(200, function () {
       $main
         .hide()
-        .load(href + )
     })
 
 }
