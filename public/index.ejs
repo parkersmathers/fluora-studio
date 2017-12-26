@@ -1,15 +1,16 @@
-<div id="main">
+<section class="landing active">
+  <%- partial('_landing') %>
+</section>
 
-  <section class="grid <%- current.source == 'index' ? 'hidden' : 'active' %>">
-    <%- partial('_cards') %>
-  </section>
+<section class="grid hidden">
+  <%- partial('_cards') %>
+</section>
 
-  <section class="landing <%- current.source == 'work' ? 'hidden' : 'active' %>">
-    <%- partial('_landing') %>
-  </section>
 
-</div>
-
-<div id="slideshow" class="<%- current.source == 'projects' ? '' : 'display-none' %>">
-  <%- partial('_slides') %>
-</div>
+<%#
+%>
+<%# <div id="slideshow" class=" %>
+  <%#- current.source == 'projects' ? '' : 'display-none' %>
+  <%# "> %>
+  <%#- partial('_slides') %>
+<%# </div> %>
