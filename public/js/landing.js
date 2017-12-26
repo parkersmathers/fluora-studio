@@ -13,6 +13,7 @@ $(document).ready(function () {
     var button = $(this)
     var link = button.find('a')
     var href = link.attr('href')
+    href = href - '.html'
     var cards = $('.grid').find('.' + href + '')
 
     // Handle touch events on links
