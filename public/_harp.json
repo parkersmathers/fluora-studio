@@ -14,7 +14,7 @@
       {
         "category": "exhibition-design",
         "color": "teal",
-        "image": "/images/fs2a.jpg",
+        "image": "/images/fs2.gif",
         "title": "Charles Dickens: The Key to Character*",
         "client": "New York Public Library",
         "contributor": "Roger Westerman",
@@ -32,7 +32,7 @@
       {
         "category": "print-design",
         "color": "orchid",
-        "image": "/images/fs4a.jpg",
+        "image": "/images/fs4.jpg",
         "title": "NYU Abu Dhabi Reflections Book",
         "client": "NYU",
         "contributor": "Michelle Willems",
@@ -95,7 +95,7 @@
       {
         "category": "animation",
         "color": "lemon",
-        "image": "/images/fs11b.gif",
+        "image": "/images/fs11.gif",
         "title": "Q Magazine \u2014 NYU Innovations issue",
         "client": "NYU",
         "contributor": "",
@@ -122,7 +122,7 @@
       {
         "category": "special-projects",
         "color": "gold",
-        "image": "/images/fs14old.jpg",
+        "image": "/images/fs14.jpg",
         "title": "NYU Global Programs Diorama Windows",
         "client": "NYU",
         "contributor": "Chris Browne",
