@@ -1,6 +1,6 @@
 <% Object.entries(samples).forEach(function ([cardId, cardData]) { %>
 
-  <a href="/projects.html" class="<%= cardData.category %> card" data-cardid="<%= cardId %>">
+  <a href="/projects/<%= cardId %>.html" class="<%= cardData.category %> card" data-cardid="<%= cardId %>">
     <div class="<%= cardData.color %> card-content">
       <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
     </div>
