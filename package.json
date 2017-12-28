@@ -1,8 +1,8 @@
 {
   "name": "harpsite",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "development version of website for fluora studio",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
