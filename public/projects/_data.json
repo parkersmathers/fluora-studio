@@ -1,0 +1,137 @@
+{
+  "1": {
+    "category": "print-design",
+    "color": "orchid",
+    "image": "../images/fs1.jpg",
+    "title": "NYU Shanghai Identity and Print Material",
+    "client": "NYU",
+    "contributor": "",
+    "award": ""
+  },
+  "2": {
+    "category": "exhibition-design",
+    "color": "teal",
+    "image": "../images/fs2.gif",
+    "title": "Charles Dickens: The Key to Character*",
+    "client": "New York Public Library",
+    "contributor": "Roger Westerman",
+    "award": "SEGD Global Design Award"
+  },
+  "3": {
+    "category": "illustration",
+    "color": "silver",
+    "image": "../images/fs3.jpg",
+    "title": "butterfly & fly butter",
+    "client": "fly butter",
+    "contributor": "butter fly fly",
+    "award": ""
+  },
+  "4": {
+    "category": "print-design",
+    "color": "orchid",
+    "image": "../images/fs4.jpg",
+    "title": "NYU Abu Dhabi Reflections Book",
+    "client": "NYU",
+    "contributor": "Michelle Willems",
+    "award": ""
+  },
+  "5": {
+    "category": "special-projects",
+    "color": "gold",
+    "image": "../images/fs5.jpg",
+    "title": "Zoetrope Animation",
+    "client": "New York Public Library",
+    "contributor": "Roger Westerman",
+    "award": ""
+  },
+  "6": {
+    "category": "special-projects",
+    "color": "gold",
+    "image": "../images/fs6.jpg",
+    "title": "NYU Global Programs Sticker Series",
+    "client": "NYU",
+    "contributor": "",
+    "award": ""
+  },
+  "7": {
+    "category": "art-commissions",
+    "color": "rose",
+    "image": "../images/fs7.jpg",
+    "title": "The New Emirati Britannica",
+    "client": "Sharjah Art Foundation",
+    "contributor": "Lynn Love",
+    "award": ""
+  },
+  "8": {
+    "category": "exhibition-design",
+    "color": "teal",
+    "image": "../images/fs8.jpg",
+    "title": "Three Faiths exhibition",
+    "client": "New York Public Library",
+    "contributor": "Amy Forman",
+    "award": ""
+  },
+  "9": {
+    "category": "identity-development",
+    "color": "blue",
+    "image": "../images/fs9.jpg",
+    "title": "SSRC Identity \u2014 Logo and Print Materials",
+    "client": "SSRC",
+    "contributor": "Ravi Rajakumar",
+    "award": ""
+  },
+  "10": {
+    "category": "illustration",
+    "color": "silver",
+    "image": "../images/fs10.jpg",
+    "title": "Lewis Thomas Prize \u2014 Custom Illustration",
+    "client": "The Rockefeller University",
+    "contributor": "",
+    "award": ""
+  },
+  "11": {
+    "category": "animation",
+    "color": "lemon",
+    "image": "../images/fs11.gif",
+    "title": "Q Magazine \u2014 NYU Innovations issue",
+    "client": "NYU",
+    "contributor": "",
+    "award": ""
+  },
+  "12": {
+    "category": "identity-development",
+    "color": "blue",
+    "image": "../images/fs12.jpg",
+    "title": "PLY Analytics \u2014 Logo, Writing, and Website",
+    "client": "PLY Analytics",
+    "contributor": "",
+    "award": ""
+  },
+  "13": {
+    "category": "print-design",
+    "color": "orchid",
+    "image": "../images/fs13.jpg",
+    "title": "Women &amp; Science Lecture Print Materials",
+    "client": "The Rockefeller University",
+    "contributor": "",
+    "award": ""
+  },
+  "14": {
+    "category": "special-projects",
+    "color": "gold",
+    "image": "../images/fs14.jpg",
+    "title": "NYU Global Programs Diorama Windows",
+    "client": "NYU",
+    "contributor": "Chris Browne",
+    "award": ""
+  },
+  "15": {
+    "category": "identity-development",
+    "color": "blue",
+    "image": "../images/fs15.jpg",
+    "title": "Science Saturday",
+    "client": "Science Saturday",
+    "contributor": "",
+    "award": "Award"
+  }
+}
