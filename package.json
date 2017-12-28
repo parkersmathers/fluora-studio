@@ -22,8 +22,10 @@
     "gulp-rev": "^8.1.0",
     "gulp-shell": "^0.6.3",
     "gulp-uglify": "^3.0.0",
-    "harp": "^0.25.0",
     "imagemin-jpeg-recompress": "^5.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.16.2",
+    "harp": "^0.25.0"
+  }
 }
