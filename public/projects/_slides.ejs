@@ -13,14 +13,7 @@
       <div class="<%= cardData.category %> card" data-slideid="<%= cardId %>">
         <div class="<%= cardData.color %> card-content">
           <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
-          <p>Client: <%= cardData.client %></p>
-          <p>Project: <%= cardData.title %></p>
-          <% if(cardData.contributor) { %>
-            <p>With: <%= cardData.contributor %></p>
-          <% } %>
-          <% if(cardData.award) { %>
-            <p>* <%= cardData.award %></p>
-          <% } %>
+          <p><%= cardData.title %></p>
         </div>
       </div>
 
