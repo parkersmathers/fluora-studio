@@ -290,6 +290,13 @@ GRID
   opacity: .1;
 }
 
+.grid.active .card-content {
+  transition: .5s ease;
+}
+
+.grid.active .card-image {
+  transition: .5s ease;
+}
 /* card order */
 
 @media screen and (orientation: portrait) {
