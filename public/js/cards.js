@@ -3,9 +3,6 @@ $(document).ready(function () {
   var targetCard
 
   function handleOneTouchCards(e) {
-    // console.log('one');
-    // console.log(e);
-    // console.log(targetCard);
     if (targetCard && (targetCard !== e.target)) {
       $(targetCard).trigger('mouseout')
       targetCard = e.target
@@ -18,9 +15,6 @@ $(document).ready(function () {
   }
 
   function handleTwoTouchesCards(e) {
-    // console.log('two');
-    // console.log(e);
-    // console.log(targetCard);
     if (e.target === targetCard) {
       $(targetCard).trigger('click')
       targetCard = undefined

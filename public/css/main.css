@@ -223,7 +223,9 @@ GRID
   background-color: rgba(170, 170, 170, 0.2);
 }
 
-/* jQuery play for landing-grid hover-toggle */
+/**
+* jQuery play for landing-grid hover-toggle
+**/
 
 /* colorized links */
 
@@ -255,13 +257,13 @@ GRID
   color: rgb(182, 126, 119);
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .active,
 .current {
   visibility: visible;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .current {
@@ -285,8 +287,16 @@ GRID
   color: inherit;
 }
 
-.card-content.faded {
+.grid.active .card-content.faded {
   opacity: .1;
+}
+
+.grid.active .card.current .card-image {
+  opacity: .05;
+}
+
+.grid.active .card.current .card-content {
+  opacity: .9;
 }
 
 .grid.active .card-content {
@@ -296,6 +306,7 @@ GRID
 .grid.active .card-image {
   transition: .5s ease;
 }
+
 /* card order */
 
 @media screen and (orientation: portrait) {

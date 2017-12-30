@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var cat, button, opaque, faded
+  var cat, button, opaque, faded, currentCard
   var touchCountGrid = 1
   var targetGrid
 
@@ -42,12 +42,9 @@ $(document).ready(function () {
       e.preventDefault()
       e.stopPropagation()
       cat = $(this).attr('class').split(' ').shift()
-      opaque = $('.grid').find('.' + cat + '')
-      faded = $('.grid').find('.card').not('.' + cat + '').find('.card-content')
-      button = $('.landing').find('span.' + cat + '')
-      faded.addClass('faded')
-      opaque.addClass('current z1')
-      button.addClass('current z2')
+      opaque = $('.grid').find('.' + cat + '').not(this).addClass('current z1')
+      faded = $('.grid').find('.card').not('.' + cat + '').find('.card-content').addClass('faded')
+      button = $('.landing').find('span.' + cat + '').addClass('current z2')
     },
     'mouseout': function (e) {
       e.preventDefault()
@@ -57,7 +54,6 @@ $(document).ready(function () {
       button.removeClass('current z2')
     },
     'click': function (e) {
-      e.preventDefault()
       $('.grid').removeClass('active').addClass('hidden')
       $('.landing').addClass('z2')
       faded.removeClass('faded')
