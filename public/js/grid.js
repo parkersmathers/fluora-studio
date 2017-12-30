@@ -1,29 +1,29 @@
 $(document).ready(function () {
   var cat, button, opaque, faded, currentCard
   var touchCountGrid = 1
-  var targetGrid
+  var targetCard
 
   function handleOneTouchCards(e) {
-    if ((targetGrid || $(e.currentTarget).hasClass('current')) && (targetGrid !== e.target)) {
-      $(targetGrid).trigger('mouseout')
-      targetGrid = e.target
-      $(targetGrid).trigger('mouseover')
+    if ((targetCard || $(e.currentTarget).hasClass('current')) && (targetCard !== e.target)) {
+      $(targetCard).trigger('mouseout')
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
     } else {
-      targetGrid = e.target
-      $(targetGrid).trigger('mouseover')
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
     }
     touchCountGrid++
   }
 
   function handleTwoTouchesCards(e) {
-    if (e.target === targetGrid || $(e.currentTarget).hasClass('current')) {
-      $(targetGrid).trigger('click')
-      targetGrid = undefined
+    if (e.target === targetCard || $(e.currentTarget).hasClass('current')) {
+      $(targetCard).trigger('click')
+      targetCard = undefined
       touchCountGrid--
     } else {
-      $(targetGrid).trigger('mouseout')
-      targetGrid = e.target
-      $(targetGrid).trigger('mouseover')
+      $(targetCard).trigger('mouseout')
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
     }
   }
 
