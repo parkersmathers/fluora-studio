@@ -1,4 +1,4 @@
-<% var id = current.source %>
+<% var id = Number(current.source) - 1 %>
 <% var projects = Object.entries(samples) %>
 <% var startProjects = projects.splice(id, 1) %>
 <% var endProjects = projects.splice(0, id) %>
@@ -10,7 +10,7 @@
 
     <% concatProjects.forEach(function ([cardId, cardData]) { %>
 
-      <div class="<%= cardData.category %> card" data-slideid="<%= cardId %>">
+      <div class="<%= cardData.category %> card">
         <div class="<%= cardData.color %> card-content">
           <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
           <p><%= cardData.title %></p>
