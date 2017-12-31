@@ -1,6 +1,6 @@
 #slideshow {
-  width: 189vw;
-  margin-left: -89vw;
+  width: 110vw;
+  margin-left: -2vw;
   flex: 1;
   align-self: flex-start;
   display: flex;
@@ -64,7 +64,7 @@
     padding: 2em;
   }
   #slideshow div.card:first-child {
-    padding-left: 10vw;
+    padding-left: 13vw;
   }
   #slideshow div.card:last-child {
     padding-right: 10vw;

@@ -121,7 +121,7 @@ $(document).ready(function () {
   $('#work').on( {
 
     'touchstart': function (e) {
-      e.preventDefault()
+      // e.preventDefault()
       switch (touchCountHere) {
         case 1: handleOneTouchHere(e); break;
         case 2: handleTwoTouchesHere(e); break;
