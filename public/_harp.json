@@ -12,7 +12,8 @@
         "category": "exhibition-design",
         "color": "teal",
         "image": "/images/fs2.gif",
-        "title": "Charles Dickens: The Key to Character"
+        "title": "Charles Dickens: The Key to Character",
+        "award": "https://segd.org/content/charles-dickens-key-character"
       },
       {
         "category": "illustration",
