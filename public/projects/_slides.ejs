@@ -1,6 +1,6 @@
 <% var id = Number(current.source) - 1 %>
 <% var projects = Object.entries(samples) %>
-<% var startProjects = projects.splice(id, 1) %>
+<% var startProjects = projects.splice((id-1), 2) %>
 <% var endProjects = projects.splice(0, id) %>
 <% var concatProjects = startProjects.concat(projects, endProjects) %>
 

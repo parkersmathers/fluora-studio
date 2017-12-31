@@ -1,9 +1,5 @@
-#slideshow.display-none {
-  display: none;
-}
-
 #slideshow {
-  width: 100vw;
+  width: 110vw;
   margin-left: -2vw;
   flex: 1;
   align-self: flex-start;
@@ -37,10 +33,6 @@
   padding-right: 10vw;
 }
 
-#slideshow .card-content {
-
-}
-
 #slideshow .card-image {
   width: 80vw;
   height: auto;
@@ -54,7 +46,7 @@
 }
 
 #slideshow p:first-of-type {
-  margin-top: 1em;
+  margin-top: .5em;
 }
 
 @media screen and (orientation: landscape) {
@@ -65,16 +57,16 @@
 
 @media screen and (orientation: landscape) and (min-width: 800px) {
   #slideshow {
-    margin-left: -4vw;
+    margin-left: -10vw;
   }
   #slideshow .card {
     padding: 2em;
   }
   #slideshow div.card:first-child {
-    padding-left: 7vw;
+    padding-left: 10vw;
   }
   #slideshow div.card:last-child {
-    /*padding-right: 7vw;*/
+    padding-right: 10vw;
   }
   #slideshow .card p {
     font-size: 1em;
