@@ -71,19 +71,19 @@ $(document).ready(function () {
         e.stopPropagation()
         button.addClass('current z2')
         cards.addClass('current z1')
-        $('.landing').addClass('z2')
+        $('#landing').addClass('z2')
       },
       'mouseout': function (e) {
         e.preventDefault()
         e.stopPropagation()
         button.removeClass('current z2')
         cards.removeClass('current z1 touch-card')
-        $('.landing').removeClass('z2')
+        $('#landing').removeClass('z2')
       },
       'click': function (e) {
         e.preventDefault()
         e.stopPropagation()
-        $('.landing').removeClass('active').addClass('hidden')
+        $('#landing').removeClass('active').addClass('hidden')
         cards.removeClass('current z1').addClass('active z1')
         button.removeClass('current z2').addClass('active z2')
         $('a').removeClass('hot')
@@ -96,7 +96,7 @@ $(document).ready(function () {
   $('#main').on( {
     'touchstart': function (e) {
       e.preventDefault()
-      $('.landing').removeClass('active z2').addClass('hidden')
+      $('#landing').removeClass('active z2').addClass('hidden')
       $('.current').removeClass('current').addClass('active')
       $('.touch-card').removeClass('touch-card').addClass('active z1')
     }
@@ -132,7 +132,7 @@ $(document).ready(function () {
     'mouseover': function (e) {
       e.preventDefault()
       e.stopPropagation()
-      $('.landing').addClass('z2')
+      $('#landing').addClass('z2')
       $('h1 span.current.z2').removeClass('current z2')
       $('.card')
         .addClass('current z1')
@@ -143,7 +143,7 @@ $(document).ready(function () {
     'mouseout': function (e) {
       e.preventDefault()
       e.stopPropagation()
-      $('.landing').removeClass('z2')
+      $('#landing').removeClass('z2')
       $('.card')
         .removeClass('current z1')
         .children().removeClass('all-gray')

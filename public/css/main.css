@@ -57,7 +57,7 @@ a {
   flex-direction: column;
 }
 
-nav, footer, .landing {
+nav, footer, #landing {
   margin-left: 7vw;
 }
 
@@ -102,14 +102,14 @@ MAIN
 LANDING
 */
 
-.landing,
-.landing.hidden {
+#landing,
+#landing.hidden {
   width: 100%;
   position: absolute;
   margin-top: 3vh;
 }
 
-.landing h1 {
+#landing h1 {
   font-size: 6.4vw;
   line-height: 1.7;
 }
@@ -278,12 +278,12 @@ GRID
   z-index: 2;
 }
 
-.landing.hidden h1 span.current,
-.landing.hidden h1 span.active {
+#landing.hidden h1 span.current,
+#landing.hidden h1 span.active {
   pointer-events: none;
 }
 
-.landing.hidden .current {
+#landing.hidden .current {
   color: inherit;
 }
 
@@ -371,7 +371,7 @@ GRID
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 1vw;
   }
-  nav, footer, .landing {
+  nav, footer, #landing {
     margin-left: 1vw;
   }
   nav, footer {
@@ -383,10 +383,10 @@ GRID
   footer p {
     font-size: 3vh;
   }
-  .landing {
+  #landing {
     margin-top: 2vh;
   }
-  .landing h1 {
+  #landing h1 {
     font-size: 3.9vw;
     line-height: 1.4;
   }
@@ -416,7 +416,7 @@ GRID
   footer p {
     font-size: 1vw;
   }
-  .landing h1 {
+  #landing h1 {
     font-size: 4.1vw;
     line-height: 1.3;
   }

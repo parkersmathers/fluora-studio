@@ -46,7 +46,7 @@ $(document).ready(function () {
     }
   }, '.card.active')
 
-  $('.landing').on( {
+  $('#landing').on( {
     'click': function (e) {
       e.preventDefault()
     }
