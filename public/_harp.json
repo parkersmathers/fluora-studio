@@ -19,7 +19,8 @@
         "category": "illustration",
         "color": "silver",
         "image": "/images/fs3.jpg",
-        "title": "The New Emirati Britannica"
+        "title": "The New Emirati Britannica",
+        "award": "http://sharjahart.org/sharjah-art-foundation/publications/new-emirati-britannica-third-edition"
       },
       {
         "category": "print-design",
@@ -43,13 +44,15 @@
         "category": "art-commissions",
         "color": "rose",
         "image": "/images/fs7.jpg",
-        "title": "The New Emirati Britannica"
+        "title": "The New Emirati Britannica",
+        "award": "https://gulflabor.org/2013/week-11-lynn-love-and-ann-sappenfield-50-celsius"
       },
       {
         "category": "exhibition-design",
         "color": "teal",
         "image": "/images/fs8.jpg",
-        "title": "Three Faiths: Judaism, Christianity, Islam"
+        "title": "Three Faiths: Judaism, Christianity, Islam",
+        "award": "https://www.coexist.org/stories/new-york-public-library"
       },
       {
         "category": "identity-development",
@@ -67,7 +70,8 @@
         "category": "animation",
         "color": "lemon",
         "image": "/images/fs11.gif",
-        "title": "NYU Q Magazine"
+        "title": "NYU Q Magazine",
+        "award": "https://www.nyu.edu/admissions/undergraduate-admissions/life-at-nyu/nyu-q-winter2017.html"
       },
       {
         "category": "identity-development",
@@ -79,19 +83,19 @@
         "category": "print-design",
         "color": "orchid",
         "image": "/images/fs13.jpg",
-        "title": "The Rockefeller University"
+        "title": "The Rockefeller University — Women & Science"
       },
       {
         "category": "special-projects",
         "color": "gold",
         "image": "/images/fs14.gif",
-        "title": "Kimmel Window Dioramas (NYU Global Programs)"
+        "title": "NYU Global Programs — Window Dioramas"
       },
       {
         "category": "identity-development",
         "color": "blue",
         "image": "/images/fs15.jpg",
-        "title": "The Rockefeller University"
+        "title": "The Rockefeller University — Science Saturday"
       }
     ]
   }
