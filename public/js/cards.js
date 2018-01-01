@@ -26,7 +26,7 @@ $(document).ready(function () {
     }
   }
 
-  $('.grid').on( {
+  $('#grid').on( {
 
     'touchstart': function (e) {
       e.preventDefault()

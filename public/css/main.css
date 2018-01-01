@@ -132,7 +132,7 @@ LANDING
 GRID
 */
 
-.grid {
+#grid {
   width: 88%;
   margin-left: -2vw;
   align-self: center;
@@ -147,19 +147,19 @@ GRID
   align-self: center;*/
 }
 
-.grid .card {
+#grid .card {
   border: none;
   display: block;
   /*flex: 1 0 33.3333%;*/
   /*padding: 1vw;*/
 }
 
-.grid .card-content {
+#grid .card-content {
   /* width: 100%; */
   /* height: 100%; */
 }
 
-.grid .card-image {
+#grid .card-image {
   width: 100%;
   height: auto;
   min-height: 50px;
@@ -167,7 +167,7 @@ GRID
   display: block;
 }
 
-.grid.hidden .card-image {
+#grid.hidden .card-image {
   opacity: .05;
 }
 
@@ -190,32 +190,32 @@ GRID
 
 /* card colors */
 
-.grid .orchid {
+#grid .orchid {
   background-color: rgb(210, 157, 198);
 }
 
-.grid .silver {
+#grid .silver {
   background-color: rgb(170, 170, 170);
 }
 
-.grid .blue {
+#grid .blue {
   background-color: rgb(145,174,196);
 }
 
-.grid .teal {
+#grid .teal {
   background-color: rgb(90, 171, 183);
 }
 
-.grid .gold {
+#grid .gold {
   background-color: rgb(154, 147, 120);
   border-radius: 50%;
 }
 
-.grid .lemon {
+#grid .lemon {
   background-color: rgb(209, 205, 110);
 }
 
-.grid .rose {
+#grid .rose {
   background-color: rgb(182, 126, 119);
 }
 
@@ -287,72 +287,72 @@ GRID
   color: inherit;
 }
 
-.grid.active .card-content.faded {
+#grid.active .card-content.faded {
   opacity: .1;
 }
 
-.grid.active .card.current .card-image {
+#grid.active .card.current .card-image {
   opacity: .05;
 }
 
-.grid.active .card.current .card-content {
+#grid.active .card.current .card-content {
   opacity: .9;
 }
 
-.grid.active .card-content {
+#grid.active .card-content {
   transition: .5s ease;
 }
 
-.grid.active .card-image {
+#grid.active .card-image {
   transition: .5s ease;
 }
 
 /* card order */
 
 @media screen and (orientation: portrait) {
-  .grid > a:nth-child(1) {
+  #grid > a:nth-child(1) {
     order: 1;
   }
-  .grid > a:nth-child(2) {
+  #grid > a:nth-child(2) {
     order: 6;
   }
-  .grid > a:nth-child(3) {
+  #grid > a:nth-child(3) {
     order: 9;
   }
-  .grid > a:nth-child(4) {
+  #grid > a:nth-child(4) {
     order: 8;
   }
-  .grid > a:nth-child(5) {
+  #grid > a:nth-child(5) {
     order: 3;
   }
-  .grid > a:nth-child(6) {
+  #grid > a:nth-child(6) {
     order: 4;
   }
-  .grid > a:nth-child(7) {
+  #grid > a:nth-child(7) {
     order: 5;
   }
-  .grid > a:nth-child(8) {
+  #grid > a:nth-child(8) {
     order: 11;
   }
-  .grid > a:nth-child(9) {
+  #grid > a:nth-child(9) {
     order: 2;
   }
-  .grid > a:nth-child(10) {
+  #grid > a:nth-child(10) {
     order: 7;
   }
-  .grid > a:nth-child(11) {
+  #grid > a:nth-child(11) {
     order: 13;
   }
-  .grid > a:nth-child(12) {
+  #grid > a:nth-child(12) {
     order: 10;
   }
-  .grid > a:nth-child(13) {
+  #grid > a:nth-child(13) {
     order: 12;
   }
-  .grid > a:nth-child(14) {
+  #grid > a:nth-child(14) {
     order: 14;
   }
-  .grid > a:nth-child(15) {
+  #grid > a:nth-child(15) {
     order: 15;
   }
 }
@@ -363,7 +363,7 @@ GRID
     padding-left: 4vw;
     margin: 0;
   }
-  .grid {
+  #grid {
     width: 75vw;
     margin-left: 0;
     align-self: flex-start;
@@ -400,10 +400,10 @@ GRID
   .p-br {
     display: none;
   }
-  .grid {
+  #grid {
     margin-right: 5vw;
   }
-  .grid .card {
+  #grid .card {
     /*flex: 1 0 20%;
     padding: .2rem .2rem .6rem;*/
   }
@@ -420,7 +420,7 @@ GRID
     font-size: 4.1vw;
     line-height: 1.3;
   }
-  .grid .card {
+  #grid .card {
     /*padding: 1vw 1vh;*/
   }
 }
