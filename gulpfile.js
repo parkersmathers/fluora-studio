@@ -123,11 +123,9 @@ gulp.task('images', function() {
   return gulp.src('images/*.+(png|jpg|gif|)')
     // .pipe(changed(imgDest))
     .pipe(imagemin([
-      giflossy({
+      imagemin.gifsicle({
         interlaced: true,
-        optimizationLevel: 3,
-        lossy: 120,
-        resize: '502x508'
+        optimizationLevel: 3
       }),
       jpegRecompress({
         loops: 2,
@@ -140,7 +138,9 @@ gulp.task('images', function() {
     .pipe(gulp.dest(imgDest))
 })
 
-gulp.task('responsive', function () {
+// Resize images
+
+gulp.task('resize', function () {
   return gulp.src('public/images/*.jpg')
     .pipe(responsive({
       '*.jpg': {
