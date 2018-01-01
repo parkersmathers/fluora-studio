@@ -1,4 +1,5 @@
 #slideshow {
+  animation: fadein 3s ease;
   width: 110vw;
   margin-left: -2vw;
   flex: 1;
@@ -20,6 +21,7 @@
   }
 
   #slideshow {
+    animation: none; /* cancel fadeIn animation for mobile view */
     animation: 1s ease-out 0s 1 slideInFromRight;
   }
 }

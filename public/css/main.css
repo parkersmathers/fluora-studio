@@ -90,12 +90,22 @@ MAIN
 */
 
 #main {
+  animation: fadein 3s ease;
   width: 100%;
   position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+@keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }
 
 /*
