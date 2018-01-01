@@ -29,7 +29,7 @@
   "4": {
     "category": "print-design",
     "color": "orchid",
-    "image": "../images/fs4.jpg",
+    "image": "../images/fs4.gif",
     "title": "NYU Abu Dhabi Reflections Book",
     "client": "NYU",
     "contributor": "Michelle Willems",
@@ -119,7 +119,7 @@
   "14": {
     "category": "special-projects",
     "color": "gold",
-    "image": "../images/fs14.jpg",
+    "image": "../images/fs14.gif",
     "title": "NYU Global Programs Diorama Windows",
     "client": "NYU",
     "contributor": "Chris Browne",
