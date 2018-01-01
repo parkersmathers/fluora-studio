@@ -9,7 +9,7 @@
 }
 
 
-@media screen and (orientation: landscape) {
+/* @media screen and (orientation: landscape) {
 
   @keyframes slideInFromRight {
     0% {
@@ -21,10 +21,10 @@
   }
 
   #slideshow {
-    animation: none; /* cancel fadeIn animation for mobile view */
+    animation: none;
     animation: 1s ease-out 0s 1 slideInFromRight;
   }
-}
+} */
 
 #slideshow .row {
   overflow-x: scroll;
