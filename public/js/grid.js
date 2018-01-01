@@ -1,28 +1,30 @@
 $(document).ready(function () {
-  var cat, button, opaque, faded, currentCard
+  var cat, button, opaque, faded
   var touchCountGrid = 1
   var targetCard
 
   function handleOneTouchCards(e) {
-    if ((targetCard || $(e.currentTarget).hasClass('current')) && (targetCard !== e.target)) {
+    e.preventDefault()
+    if ((targetCard || $(e.currentTarget).hasClass('current')) && (targetCard !== e.currentTarget)) {
       $(targetCard).trigger('mouseout')
-      targetCard = e.target
+      targetCard = e.currentTarget
       $(targetCard).trigger('mouseover')
     } else {
-      targetCard = e.target
+      targetCard = e.currentTarget
       $(targetCard).trigger('mouseover')
     }
     touchCountGrid++
   }
 
   function handleTwoTouchesCards(e) {
-    if (e.target === targetCard || $(e.currentTarget).hasClass('current')) {
+    if (e.currentTarget === targetCard || $(e.currentTarget).hasClass('active')) {
       $(targetCard).trigger('click')
       targetCard = undefined
       touchCountGrid--
     } else {
+      e.preventDefault()
       $(targetCard).trigger('mouseout')
-      targetCard = e.target
+      targetCard = e.currentTarget
       $(targetCard).trigger('mouseover')
     }
   }
@@ -30,7 +32,6 @@ $(document).ready(function () {
   $('#main').on( {
 
     'touchstart': function (e) {
-      e.preventDefault()
       switch (touchCountGrid) {
         case 1: handleOneTouchCards(e); break;
         case 2: handleTwoTouchesCards(e); break;
@@ -54,11 +55,11 @@ $(document).ready(function () {
       button.removeClass('current z2')
     },
     'click': function (e) {
-      $('.grid').removeClass('active').addClass('hidden')
-      $('.landing').addClass('z2')
-      faded.removeClass('faded')
-      opaque.removeClass('current z1').addClass('active')
-      button.removeClass('current z2').addClass('active')
+      // $('.grid').removeClass('active').addClass('hidden')
+      // $('.landing').addClass('z2')
+      // faded.removeClass('faded')
+      // opaque.removeClass('current z1').addClass('active')
+      // button.removeClass('current z2').addClass('active')
     }
   }, '.grid.active .card')
 })
