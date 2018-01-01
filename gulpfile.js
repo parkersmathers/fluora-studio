@@ -6,6 +6,8 @@ var gulp = require('gulp'),
     shell = require('gulp-shell'),
     imagemin = require('gulp-imagemin'),
     jpegRecompress = require('imagemin-jpeg-recompress'),
+    responsive = require('gulp-responsive'),
+    giflossy = require('imagemin-giflossy'),
     concat = require('gulp-concat'),
     cleanCss = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
@@ -121,9 +123,10 @@ gulp.task('images', function() {
   return gulp.src('images/*.+(png|jpg|gif|)')
     // .pipe(changed(imgDest))
     .pipe(imagemin([
-      imagemin.gifsicle({
+      giflossy({
         interlaced: true,
-        optimizationLevel: 3
+        optimizationLevel: 3,
+        lossy: 120
       }),
       jpegRecompress({
         loops: 2,
@@ -135,5 +138,18 @@ gulp.task('images', function() {
     }))
     .pipe(gulp.dest(imgDest))
 })
+
+gulp.task('responsive', function () {
+  return gulp.src('images/*.{jpg,gif}')
+    .pipe(responsive({
+      quality: 70,
+      progressive: true,
+      compressionLevel: 6,
+      withMetadata: false
+    }, {
+      verbose: true
+    }))
+    .pipe(gulp.dest('public/images'));
+});
 
 gulp.task('distribute', ['clean', 'css', 'js'])
