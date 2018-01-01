@@ -25,20 +25,21 @@
       {
         "category": "print-design",
         "color": "orchid",
-        "image": "/images/fs4.gif",
+        "image": "/images/fs4.jpg",
         "title": "NYU Abu Dhabi"
       },
       {
         "category": "special-projects",
         "color": "gold",
         "image": "/images/fs5.jpg",
-        "title": "Zoetrope (Charles Dickens: The Key to Character)"
+        "title": "Charles Dickens: The Key to Character — Zoetrope",
+        "award": "https://segd.org/content/charles-dickens-key-character"
       },
       {
         "category": "special-projects",
         "color": "gold",
         "image": "/images/fs6.jpg",
-        "title": "Stickers (NYU Global Programs)"
+        "title": "NYU Global Programs — Sticker Series"
       },
       {
         "category": "art-commissions",
