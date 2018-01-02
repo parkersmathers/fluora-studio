@@ -8,23 +8,6 @@
   align-items: center;
 }
 
-/* @media screen and (orientation: landscape) {
-
-  @keyframes slideInFromRight {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  #slideshow {
-    animation: none;
-    animation: 1s ease-out 0s 1 slideInFromRight;
-  }
-} */
-
 #slideshow .row {
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -63,6 +46,17 @@
   line-height: 1.5;
   padding-left: .2em;
   margin-top: .5em;
+}
+
+@media screen and (orientation: portrait) and (min-width: 500px) {
+  #slideshow .card-image {
+    width: 69vw;
+  }
+  #slideshow .card p,
+  #slideshow .card a {
+    font-size: 1.25em;
+    line-height: 1.5;
+  }
 }
 
 @media screen and (orientation: landscape) {
