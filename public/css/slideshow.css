@@ -1,5 +1,5 @@
 #slideshow {
-  animation: fadein 3s ease;
+  animation: fadein .5s ease;
   width: 110vw;
   margin-left: -2vw;
   flex: 1;

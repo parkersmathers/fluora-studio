@@ -90,7 +90,7 @@ MAIN
 */
 
 #main {
-  animation: fadein 3s ease;
+  animation: fadein .3s ease;
   width: 100%;
   position: relative;
   flex: 1;
@@ -310,11 +310,11 @@ GRID
 }
 
 #grid.active .card-content {
-  transition: .5s ease;
+  transition: .3s ease;
 }
 
 #grid.active .card-image {
-  transition: .5s ease;
+  transition: .3s ease;
 }
 
 /* card order */
