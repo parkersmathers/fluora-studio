@@ -8,7 +8,6 @@
   align-items: center;
 }
 
-
 /* @media screen and (orientation: landscape) {
 
   @keyframes slideInFromRight {
@@ -57,14 +56,12 @@
   height: auto;
 }
 
-#slideshow .card p {
+#slideshow .card p,
+#slideshow .card a {
   display: block;
   font-size: .75em;
   line-height: 1.5;
   padding-left: .2em;
-}
-
-#slideshow p:first-of-type {
   margin-top: .5em;
 }
 
@@ -88,7 +85,8 @@
   #slideshow div.card:last-child {
     padding-right: 10vw;
   }
-  #slideshow .card p {
+  #slideshow .card p,
+  #slideshow .card a {
     font-size: 1em;
     line-height: 1.4;
   }

@@ -13,11 +13,11 @@
       <div class="<%= cardData.category %> card">
         <div class="<%= cardData.color %> card-content">
           <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
-          <p><%= cardData.title %>
           <% if(cardData.award) { %>
-            <span><a href="<%= cardData.award %>" target="_blank"> . . .</a></span>
+            <a href="<%= cardData.award %>" target="_blank"><%= cardData.title %> . . .</a>
+          <% } else { %>
+            <p><%= cardData.title %></p>
           <% } %>
-          </p>
         </div>
       </div>
 
