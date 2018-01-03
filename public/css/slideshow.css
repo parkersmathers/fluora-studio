@@ -42,10 +42,10 @@
 #slideshow .card p,
 #slideshow .card a {
   display: block;
-  font-size: .75em;
+  font-size: 2.1vh;
   line-height: 1.5;
-  padding-left: .2em;
-  margin-top: .5em;
+  padding-left: .8vw;
+  margin-top: .7vh;
 }
 
 @media screen and (orientation: portrait) and (min-width: 500px) {
@@ -54,8 +54,7 @@
   }
   #slideshow .card p,
   #slideshow .card a {
-    font-size: 1.25em;
-    line-height: 1.5;
+    font-size: 1.9vh;
   }
 }
 
@@ -64,9 +63,13 @@
     width: auto;
     height: 50vh;
   }
+  #slideshow .card p,
+  #slideshow .card a {
+    font-size: 2.4vh;
+  }
 }
 
-@media screen and (orientation: landscape) and (min-width: 800px) {
+@media screen and (orientation: landscape) and (min-width: 750px) {
   #slideshow {
     margin-left: -10vw;
   }
@@ -81,7 +84,7 @@
   }
   #slideshow .card p,
   #slideshow .card a {
-    font-size: 1em;
+    font-size: 2.2vh;
     line-height: 1.4;
   }
 }
