@@ -1,5 +1,5 @@
 #slideshow {
-  animation: fadein .5s ease;
+  animation: fadein .7s ease;
   width: 110vw;
   margin-left: -2vw;
   flex: 1;
@@ -44,7 +44,7 @@
   display: block;
   font-size: 2.1vh;
   line-height: 1.5;
-  padding-left: .8vw;
+  padding-left: .6vw;
   margin-top: .7vh;
 }
 
@@ -61,7 +61,7 @@
 @media screen and (orientation: landscape) {
   #slideshow .card-image {
     width: auto;
-    height: 50vh;
+    height: 54vh;
   }
   #slideshow .card p,
   #slideshow .card a {
