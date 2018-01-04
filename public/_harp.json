@@ -1,6 +1,7 @@
 {
   "globals": {
     "owner": "Fluora Studio",
+    "description": "Fluora Studio is a design service based in New York City and specializing in print design, illustration, identity development, exhibition design, special projects, animation, and art commissions.",
     "samples": [
       {
         "category": "print-design",
