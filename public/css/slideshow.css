@@ -24,6 +24,7 @@
 
 #slideshow .card {
   padding: 1em;
+  white-space: nowrap;
 }
 
 #slideshow div.card:first-child {
@@ -42,7 +43,7 @@
 #slideshow .card p,
 #slideshow .card a {
   display: block;
-  font-size: 2.1vh;
+  font-size: 1.9vh;
   line-height: 1.5;
   padding-left: .6vw;
   margin-top: .7vh;
@@ -59,6 +60,9 @@
 }
 
 @media screen and (orientation: landscape) {
+  #slideshow {
+    margin-left: -10vw;
+  }
   #slideshow .card-image {
     width: auto;
     height: 54vh;
@@ -70,9 +74,6 @@
 }
 
 @media screen and (orientation: landscape) and (min-width: 750px) {
-  #slideshow {
-    margin-left: -10vw;
-  }
   #slideshow .card {
     padding: 2em;
   }

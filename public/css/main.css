@@ -82,7 +82,7 @@ footer {
 }
 
 footer p {
-  font-size: 1.8vh;
+  font-size: 1.5vh;
 }
 
 /*
@@ -411,7 +411,7 @@ GRID
     font-size: 2.5vw;
   }
   footer p {
-    font-size: 2vh;
+    /* font-size: 2vh; */
   }
   #landing {
     margin-top: 2vh;
