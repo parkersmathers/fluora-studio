@@ -1,6 +1,7 @@
-$(document).ready(function () {
+$(function () {
 
   //
+  // LANDING
   // Handle mouse and touch events for landing links and touch cards
   //
 
@@ -31,7 +32,6 @@ $(document).ready(function () {
         target = e.target
         $(target).trigger('mouseover')
       }
-      // cards.removeClass('current z1').addClass('touch-card')
       touchCountLanding++
     }
 
@@ -46,7 +46,6 @@ $(document).ready(function () {
         $(target).trigger('mouseout')
         target = e.target
         $(target).trigger('mouseover')
-        // cards.removeClass('current z1').addClass('touch-card')
       }
     }
 
@@ -102,9 +101,7 @@ $(document).ready(function () {
     }
   }, '.touch-card')
 
-  //
   // Handle mouse and touch events on 'here' button
-  //
 
   var touchCountHere = 1
 
@@ -150,4 +147,124 @@ $(document).ready(function () {
         .children().removeClass('hidden')
     }
   })
+
+  //
+  // GRID EVENTS
+  //
+
+  var cat, button, opaque, faded
+  var touchCountGrid = 1
+  var targetCard
+
+  function handleOneTouchCards(e) {
+    e.preventDefault()
+    if ((targetCard || $(e.currentTarget).hasClass('current')) && (targetCard !== e.currentTarget)) {
+      $(targetCard).trigger('mouseout')
+      targetCard = e.currentTarget
+      $(targetCard).trigger('mouseover')
+    } else {
+      targetCard = e.currentTarget
+      $(targetCard).trigger('mouseover')
+    }
+    touchCountGrid++
+  }
+
+  function handleTwoTouchesCards(e) {
+    if (e.currentTarget === targetCard || $(e.currentTarget).hasClass('active')) {
+      $(targetCard).trigger('click')
+      targetCard = undefined
+      touchCountGrid--
+    } else {
+      e.preventDefault()
+      $(targetCard).trigger('mouseout')
+      targetCard = e.currentTarget
+      $(targetCard).trigger('mouseover')
+    }
+  }
+
+  $('#main').on( {
+
+    'touchstart': function (e) {
+      switch (touchCountGrid) {
+        case 1: handleOneTouchCards(e); break;
+        case 2: handleTwoTouchesCards(e); break;
+        default: console.log('not supported'); break;
+      }
+    },
+
+    'mouseover': function(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      cat = $(this).attr('class').split(' ').shift()
+      opaque = $('#grid').find('.' + cat + '').not(this).addClass('current z1')
+      faded = $('#grid').find('.card').not('.' + cat + '').find('.card-content').addClass('faded')
+      button = $('#landing').find('span.' + cat + '').addClass('current z2')
+    },
+
+    'mouseout': function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      faded.removeClass('faded')
+      opaque.removeClass('current z1')
+      button.removeClass('current z2')
+    }
+
+  }, '#grid.active .card')
+
+  var touchCountCards = 1
+  var targetCard
+
+  function handleOneTouchCards(e) {
+    if (targetCard && (targetCard !== e.target)) {
+      $(targetCard).trigger('mouseout')
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
+    } else {
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
+    }
+    touchCountCards++
+  }
+
+  function handleTwoTouchesCards(e) {
+    if (e.target === targetCard) {
+      $(targetCard).trigger('click')
+      targetCard = undefined
+      touchCountCards--
+    } else {
+      $(targetCard).trigger('mouseout')
+      targetCard = e.target
+      $(targetCard).trigger('mouseover')
+    }
+  }
+
+  //
+  // CARDS view
+  //
+
+  $('#grid').on( {
+
+    'touchstart': function (e) {
+      e.preventDefault()
+      switch (touchCountCards) {
+        case 1: handleOneTouchCards(e); break;
+        case 2: handleTwoTouchesCards(e); break;
+        default: console.log('not supported'); break;
+      }
+    },
+
+    'mouseover': function (e) {
+      $(this).find('img').css('opacity', 1)
+    },
+
+    'mouseout': function (e) {
+      $(this).find('img').removeAttr('style')
+    }
+  }, '.card.active')
+
+  $('#landing').on( {
+    'click': function (e) {
+      e.preventDefault()
+    }
+  }, 'a.active')
 })
