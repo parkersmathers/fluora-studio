@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteCond %{HTTP:Origin} !^$|http(s)?://(www\.)?par-ker.bitbucket\.io$ [NC]
+RewriteCond %{HTTP:Origin} !^$|http(s)?://(www\.)?fluorastudio\.com$ [NC]
 RewriteRule \.(woff|eot)$ - [NC,L]
 RewriteCond %{HTTP_REFERER} !.
 RewriteRule \.(woff|eot)$ - [F,NC,L]
