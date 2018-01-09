@@ -154,9 +154,9 @@ $(function () {
 
   var cat, button, opaque, faded
   var touchCountGrid = 1
-  var targetCard
+  var targetGridCard
 
-  function handleOneTouchCards(e) {
+  function handleOneTouchGridCards(e) {
     e.preventDefault()
     if ((targetCard || $(e.currentTarget).hasClass('current')) && (targetCard !== e.currentTarget)) {
       $(targetCard).trigger('mouseout')
@@ -169,7 +169,7 @@ $(function () {
     touchCountGrid++
   }
 
-  function handleTwoTouchesCards(e) {
+  function handleTwoTouchesGridCards(e) {
     if (e.currentTarget === targetCard || $(e.currentTarget).hasClass('active')) {
       $(targetCard).trigger('click')
       targetCard = undefined
@@ -186,8 +186,8 @@ $(function () {
 
     'touchstart': function (e) {
       switch (touchCountGrid) {
-        case 1: handleOneTouchCards(e); break;
-        case 2: handleTwoTouchesCards(e); break;
+        case 1: handleOneTouchGridCards(e); break;
+        case 2: handleTwoTouchesGridCards(e); break;
         default: console.log('not supported'); break;
       }
     },
@@ -207,9 +207,16 @@ $(function () {
       faded.removeClass('faded')
       opaque.removeClass('current z1')
       button.removeClass('current z2')
-    }
+    },
 
+    'click': function (e) {
+
+    }
   }, '#grid.active .card')
+
+  //
+  // CARDS view
+  //
 
   var touchCountCards = 1
   var targetCard
@@ -237,10 +244,6 @@ $(function () {
       $(targetCard).trigger('mouseover')
     }
   }
-
-  //
-  // CARDS view
-  //
 
   $('#grid').on( {
 
