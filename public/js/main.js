@@ -1,14 +1,14 @@
 $(function () {
 
   //
-  // LANDING
-  // Handle mouse and touch events for landing links and touch cards
+  // LANDING view
+  // Handle mouse and touch events for links
   //
 
   var touchCountLanding = 1
   var target
 
-  // Handle events for hovering over links and switching views
+  // Handle events for hovering over links and switching to cards view
 
   $('h1 span').each(function () {
     var button = $(this)
@@ -76,7 +76,7 @@ $(function () {
         e.preventDefault()
         e.stopPropagation()
         button.removeClass('current z2')
-        cards.removeClass('current z1 touch-card')
+        cards.removeClass('current z1')
         $('#landing').removeClass('z2')
       },
       'click': function (e) {
@@ -89,17 +89,6 @@ $(function () {
       }
     }, '.hot')
   })
-
-  // Handle touch events on cards
-
-  $('#main').on( {
-    'touchstart': function (e) {
-      e.preventDefault()
-      $('#landing').removeClass('active z2').addClass('hidden')
-      $('.current').removeClass('current').addClass('active')
-      $('.touch-card').removeClass('touch-card').addClass('active z1')
-    }
-  }, '.touch-card')
 
   // Handle mouse and touch events on 'here' button
 
@@ -118,7 +107,6 @@ $(function () {
   $('#work').on( {
 
     'touchstart': function (e) {
-      // e.preventDefault()
       switch (touchCountHere) {
         case 1: handleOneTouchHere(e); break;
         case 2: handleTwoTouchesHere(e); break;
@@ -149,7 +137,7 @@ $(function () {
   })
 
   //
-  // GRID EVENTS
+  // GRID view
   //
 
   var cat, button, opaque, faded
