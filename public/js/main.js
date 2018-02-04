@@ -75,9 +75,9 @@ $(function () {
       'mouseout': function (e) {
         e.preventDefault()
         e.stopPropagation()
-        button.removeClass('current z2')
-        cards.removeClass('current z1')
         $('#landing').removeClass('z2')
+        cards.removeClass('current z1')
+        button.removeClass('current z2')
       },
       'click': function (e) {
         e.preventDefault()
