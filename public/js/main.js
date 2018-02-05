@@ -1,4 +1,5 @@
 $(function () {
+  FastClick.attach(document.body)
 
   //
   // LANDING view
