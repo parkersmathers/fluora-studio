@@ -49,6 +49,20 @@ $(function () {
       }
     }
 
+    // $(this).on( {
+    //
+    //   'touchstart': function (e) {
+    //     e.preventDefault()
+    //     switch (touchCountLanding) {
+    //       case 1: handleOneTouchLinks(e); break;
+    //       case 2: handleTwoTouchesLinks(e); break;
+    //       default: console.log('not supported'); break;
+    //     }
+    //   }
+    // }, '.hot')
+
+    // Handle touch and mouse events
+
     $(this).on( {
 
       'touchstart': function (e) {
@@ -58,13 +72,7 @@ $(function () {
           case 2: handleTwoTouchesLinks(e); break;
           default: console.log('not supported'); break;
         }
-      }
-    }, '.hot')
-
-    // Handle mouse events
-
-    $(this).on( {
-
+      },
       'mouseover': function (e) {
         e.preventDefault()
         e.stopPropagation()
