@@ -8,7 +8,7 @@ $(function () {
   var touchCountLanding = 1
   var target
 
-  // Handle events for hovering over links and switching to cards view
+  // Handle events for hovering over links and switching to Cards view
 
   $('h1 span').each(function () {
     var button = $(this)
@@ -17,7 +17,7 @@ $(function () {
     if (href === 'work.html') { href -= '.html' }
     var cards = $('#grid').find('.' + href + '')
 
-    // Handle touch events on links
+    // Handlers for touch events on links
 
     function handleOneTouchLinks(e) {
       e.preventDefault()
