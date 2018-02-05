@@ -3,18 +3,11 @@ var gulp =      require('gulp'),
     concat =    require('gulp-concat'),
     cleanCss =  require('gulp-clean-css'),
     uglify =    require('gulp-uglify'),
-    rev =       require('gulp-rev')
-
-var paths = {
-  styles: {
-    src: 'build/css/*.css',
-    dest: 'dist/'
-  },
-  scripts: {
-    src: 'build/js/*.js',
-    dest: 'dist/'
-  }
-}
+    rev =       require('gulp-rev'),
+    postcss =   require('gulp-postcss'),
+    sourcemaps = require('gulp-sourcemaps'),
+    precss =    require('precss'),
+    autoprefixer = require('autoprefixer')
 
 /**
  * Build site with Harp compile
@@ -25,8 +18,6 @@ gulp.task('build', function() {
       'harp compile public/ build/'
     ]))
 });
-
-
 
 /**
  * Optimize js for production
@@ -46,4 +37,16 @@ gulp.task('css', function() {
     .pipe(concat('app.css'))
     .pipe(cleanCss())
     .pipe(gulp.dest('dist'))
+});
+
+/**
+ * PostCSS build tools
+ */
+gulp.task('postcss', function () {
+
+  return gulp.src('public/**/*.css')
+    .pipe( sourcemaps.init() )
+    .pipe( postcss([ require('precss'), require('autoprefixer') ]) )
+    .pipe( sourcemaps.write('.') )
+    .pipe( gulp.dest('build/') );
 });
