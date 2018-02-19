@@ -20,7 +20,6 @@ $(function () {
     // Handlers for touch events on links
 
     function handleOneTouchLinks(e) {
-      e.preventDefault()
       if ($('.card-content').hasClass('all-gray')) {
         touchCountHere--
         $('h1 span a#work').trigger('mouseout')
@@ -38,14 +37,12 @@ $(function () {
 
     function handleTwoTouchesLinks(e) {
       if ($('.card-content').hasClass('all-gray')) {
-        e.preventDefault()
         $('h1 span a#work').trigger('mouseout')
         touchCountHere--
       }
       if (e.target === target) {
         $(target).trigger('click')
       } else {
-        e.preventDefault()
         $(target).trigger('mouseout')
         target = e.target
         $(target).trigger('mouseover')
@@ -57,7 +54,8 @@ $(function () {
     $(this).on( {
 
       'touchstart': function (e) {
-        // e.preventDefault()
+        e.preventDefault()
+        e.stopPropagation()
         switch (touchCountLanding) {
           case 1: handleOneTouchLinks(e); break;
           case 2: handleTwoTouchesLinks(e); break;

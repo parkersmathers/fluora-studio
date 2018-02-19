@@ -150,18 +150,11 @@ GRID
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 2vw;
-  /*display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-content: flex-start;
-  align-self: center;*/
 }
 
 #grid .card {
   border: none;
   display: block;
-  /*flex: 1 0 33.3333%;*/
-  /*padding: 1vw;*/
 }
 
 #grid .card-content {
@@ -179,23 +172,6 @@ GRID
 
 #grid.hidden .card-image {
   opacity: .05;
-}
-
-/* touch cards */
-
-.touch-card {
-  z-index: 500;
-  position: relative;
-  cursor: pointer;
-  visibility: visible;
-}
-
-.touch-card .card-content {
-  opacity: .8;
-}
-
-.touch-card img {
-  opacity: .1;
 }
 
 /* card colors */
