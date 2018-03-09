@@ -14,7 +14,7 @@
         <div class="<%= cardData.color %> card-content">
           <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
           <% if(cardData.award) { %>
-            <a href="<%= cardData.award %>" target="_blank"><%= cardData.title %> . . .</a>
+            <a href="<%= cardData.award %>" target="_blank" rel="noopener"><%= cardData.title %> . . .</a>
           <% } else { %>
             <p><%= cardData.title %></p>
           <% } %>
