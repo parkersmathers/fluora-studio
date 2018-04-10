@@ -1,5 +1,4 @@
 $(function () {
-
   //
   // LANDING view
   // Handle mouse and touch events for links
@@ -14,7 +13,7 @@ $(function () {
     var button = $(this)
     var link = button.find('a')
     var href = link.attr('href')
-    if (href === 'work.html') { href -= '.html' }
+    // if (href === 'work.html') { href -= '.html' }
     var cards = $('#grid').find('.' + href + '')
 
     // Handlers for touch events on links
