@@ -10,4 +10,6 @@ _harpold.json
 build
 gulpfileold.js
 old
-yarn-error.log
+yarn*
+package*
+gulp*
