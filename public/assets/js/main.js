@@ -165,7 +165,7 @@ $(function () {
     }
   }
 
-  $('#main').on( {
+  $('main').on( {
 
     'touchstart': function (e) {
       switch (touchCountGrid) {

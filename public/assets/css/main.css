@@ -88,7 +88,7 @@ footer p {
 MAIN
 */
 
-#main {
+main {
   width: 100%;
   position: relative;
   flex: 1 1 auto;
