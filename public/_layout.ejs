@@ -2,23 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= sitename %></title>
+    <title><%= title %></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%= description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="<%= title %>">
+    <meta property="og:url" content="<%= url %>">
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:description" content="<%= description %>">
+
     <link rel="stylesheet" href="/assets/css/main.css">
   </head>
   <body>
     <div id="page">
+
       <%- partial('_includes/_nav') %>
+
       <% if (current.path[0] === 'index' || current.path[0] === 'work') { %>
+
         <div id="main">
           <%- yield %>
         </div>
+
       <% } else { %>
+
         <%- yield %>
+
       <% } %>
+
       <%- partial('_includes/_footer') %>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="/assets/js/jquery-3.3.1.min.js"></script> -->
