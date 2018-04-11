@@ -2,19 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title><%= sitename %></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%= description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
   </head>
   <body>
     <div id="page">
-      <%- partial('_nav') %>
-      <%- yield %>
-      <%- partial('_footer') %>
+      <%- partial('_includes/_nav') %>
+      <div id="main">
+        <%- yield %>
+        <%# if (current.path = 'index') { %>
+          <%#- yield %>
+        <%# } %>
+        <%# else if (current.path[0] = 'work') { %>
+
+        <%# } %>
+      </div>
+      <%- partial('_includes/_footer') %>
     </div>
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
