@@ -1,15 +1,12 @@
-<% var id = Number(current.source) - 1 %>
-<% var projects = Object.entries(samples) %>
-<% var startProjects = projects.splice(id, 1) %>
-<% var endProjects = projects.splice(0, id) %>
-<% var concatProjects = startProjects.concat(projects, endProjects) %>
+<%  var index = Number(current.source) - 1
+    var projects = Object.entries(public.projects._data)
+    var startProjects = projects.splice(index, 1)
+    var endProjects = projects.splice(0, index)
+    var concatProjects = startProjects.concat(projects, endProjects) %>
 
 <section id="slideshow">
-
   <div class="row">
-
     <% concatProjects.forEach(function ([cardId, cardData]) { %>
-
       <div class="<%= cardData.category %> card">
         <div class="<%= cardData.color %> card-content">
           <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
@@ -20,9 +17,6 @@
           <% } %>
         </div>
       </div>
-
     <% }) %>
-
   </div>
-
 </section>
