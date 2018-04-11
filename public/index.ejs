@@ -1,8 +1,8 @@
 
-  <section id="landing" class="active">
+  <section id="landing" class=<%= current.path[0] === 'index' ? 'active' : 'hidden' %>>
     <%- partial('/_includes/_landing') %>
   </section>
 
-  <section id="grid" class="hidden">
+  <section id="grid" class=<%= current.path[0] === 'work' ? 'active' : 'hidden' %>>
     <%- partial('_includes/_cards') %>
   </section>
