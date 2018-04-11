@@ -11,15 +11,13 @@
   <body>
     <div id="page">
       <%- partial('_includes/_nav') %>
-      <div id="main">
+      <% if (current.path[0] === 'index' || current.path[0] === 'work') { %>
+        <div id="main">
+          <%- yield %>
+        </div>
+      <% } else { %>
         <%- yield %>
-        <%# if (current.path = 'index') { %>
-          <%#- yield %>
-        <%# } %>
-        <%# else if (current.path[0] = 'work') { %>
-
-        <%# } %>
-      </div>
+      <% } %>
       <%- partial('_includes/_footer') %>
     </div>
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
