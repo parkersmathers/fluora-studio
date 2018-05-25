@@ -106,6 +106,7 @@ LANDING
   width: 100%;
   position: absolute;
   margin-top: 3vh;
+  z-index: 1;
 }
 
 #landing h1 {
@@ -114,7 +115,7 @@ LANDING
 }
 
 .p-br {
-  display: inline; /* visible in portrait view */
+  display: inline-block; /* visible in portrait view */
 }
 
 .l-br {
@@ -376,10 +377,12 @@ GRID
     border-bottom: solid .06em;
     line-height: .8;
   }
-  .l-br {
+  .l-br,
+  a .u-l.l-br {
     display: inline-block;
   }
-  .p-br {
+  .p-br,
+  a .u-l.p-br {
     display: none;
   }
   #grid {
