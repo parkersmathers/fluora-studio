@@ -1,7 +1,6 @@
 <% Object.entries(public.projects._data).forEach(function ([cardId, cardData]) { %>
   <a href="/projects/<%= Number(cardId) %>" class="<%= cardData.category %> card">
-    <div class="<%= cardData.color %> card-content">
-      <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
-    </div>
+    <img class="card-image" src="<%= cardData.image %>" alt="<%= cardData.title %>">
+    <div class="<%= cardData.category %> <%= cardData.color %> card-overlay"></div>
   </a>
 <% }) %>
