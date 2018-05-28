@@ -179,7 +179,8 @@ GRID
   opacity: 0;
 }
 
-#grid.hidden .card.current .card-overlay {
+#grid.hidden .card.current .card-overlay,
+#grid.hidden .card .card-overlay.all-gray {
   opacity: 0.9;
 }
 
@@ -226,7 +227,7 @@ GRID
   background-color: rgb(182, 126, 119);
 }
 
-#grid .card .overlay.all-gray {
+#grid.hidden .card .card-overlay.all-gray {
   background-color: rgba(170, 170, 170, 0.2);
 }
 
