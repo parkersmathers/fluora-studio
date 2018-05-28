@@ -132,9 +132,18 @@ LANDING
   display: none; /* hidden in landscape view */
 }
 
-.u-l {
-  border-bottom: solid .05em; /* fancy underline */
-  line-height: .8;
+/* fancy underline */
+.u-l:after {
+  content: '';
+  display: block;
+  width: calc(100% - 2vw);
+  border-bottom: solid .05em;
+  margin-top: -12px;
+}
+
+/* fancy underline without trailing comma */
+.u-l-x:after {
+  width: 100%;
 }
 
 /*
@@ -406,9 +415,14 @@ GRID
     font-size: 3.9vw;
     line-height: 1.4;
   }
-  .u-l {
+  /* fancy underline */
+  .u-l:after {
+    width: calc(100% - 1vw);
     border-bottom: solid .06em;
-    line-height: .8;
+    margin-top: -12px;
+  }
+  .u-l-x:after {
+    width: 100%;
   }
   a > span.l-br,
   .l-br {
