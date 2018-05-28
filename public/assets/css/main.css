@@ -21,7 +21,7 @@ section, div, nav, footer, form, ul {
   display: block;
 }
 
-p, li, h1, h2, h3, h4 {
+p, a, span, li, h1, h2, h3, h4 {
   display: inline-block;
 }
 
@@ -34,7 +34,7 @@ ul, li {
 }
 
 a {
-  cursor: pointer;
+  /* cursor: pointer; */
   text-decoration: none;
   color: inherit;
 }
@@ -101,12 +101,22 @@ main {
 LANDING
 */
 
-#landing,
-#landing.hidden {
+#landing {
   width: 100%;
   position: absolute;
   margin-top: 3vh;
-  z-index: 1;
+}
+
+#landing.hidden {
+  opacity: 0;
+}
+
+#landing.active h1 {
+  opacity: 1;
+}
+
+#landing.active h1.hidden {
+  opacity: 0;
 }
 
 #landing h1 {
@@ -123,7 +133,6 @@ LANDING
 }
 
 .u-l {
-  display: inline-block;
   border-bottom: solid .05em; /* fancy underline */
   line-height: .8;
 }
@@ -140,101 +149,143 @@ GRID
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 2vw;
+  position: relative;
 }
 
 #grid .card {
-  border: none;
   display: block;
+  width: 100%;
+  position: relative;
 }
 
-#grid .card-image {
+#grid .card .card-image {
+  display: block;
   width: 100%;
   height: auto;
-  min-height: 50px;
-  vertical-align: middle;
-  display: block;
 }
 
-#grid.hidden .card-image {
-  opacity: .05;
+#grid .card .card-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#grid.hidden .card .card-overlay,
+#grid.hidden .card .card-image {
+  opacity: 0;
+}
+
+#grid.hidden .card.current .card-overlay {
+  opacity: 0.9;
+}
+
+#grid.hidden .card.current .card-image {
+  opacity: 0.1;
+}
+
+#grid.active .card .card-image {
+  opacity: 1;
+}
+
+#grid.active .card .card-overlay {
+  opacity: 0;
 }
 
 /* card colors */
 
-#grid .orchid {
+#grid .card .card-overlay.orchid {
   background-color: rgb(210, 157, 198);
 }
 
-#grid .silver {
+#grid .card .card-overlay.silver {
   background-color: rgb(170, 170, 170);
 }
 
-#grid .blue {
+#grid .card .card-overlay.blue {
   background-color: rgb(145,174,196);
 }
 
-#grid .teal {
+#grid .card .card-overlay.teal {
   background-color: rgb(90, 171, 183);
 }
 
-#grid .gold {
+#grid .card .card-overlay.gold {
   background-color: rgb(154, 147, 120);
   border-radius: 50%;
 }
 
-#grid .lemon {
+#grid .card .card-overlay.lemon {
   background-color: rgb(209, 205, 110);
 }
 
-#grid .rose {
+#grid .card .card-overlay.rose {
   background-color: rgb(182, 126, 119);
 }
 
-#grid .card .card-content.all-gray {
+#grid .card .overlay.all-gray {
   background-color: rgba(170, 170, 170, 0.2);
 }
 
-/**
-* jQuery play for landing-grid hover-toggle
-**/
+#grid.hidden .card:not(.current) {
+  pointer-events: none;
+}
+
+#grid.print-design .card.print-design.current .card-overlay.current,
+#grid.illustration .card.illustration.current .card-overlay.current,
+#grid.identity-development .card.identity-development.current .card-overlay.current,
+#grid.exhibition-design .card.exhibition-design.current .card-overlay.current,
+#grid.special-projects .card.special-projects.current .card-overlay.current,
+#grid.animation .card.animation.current .card-overlay.current,
+#grid.art-commissions .card.art-commissions.current .card-overlay.current {
+  opacity: 0;
+}
+
+#grid.print-design .card.print-design.current .card-image.current,
+#grid.illustration .card.illustration.current .card-image.current,
+#grid.identity-development .card.identity-development.current .card-image.current,
+#grid.exhibition-design .card.exhibition-design.current .card-image.current,
+#grid.special-projects .card.special-projects.current .card-image.current,
+#grid.animation .card.animation.current .card-image.current,
+#grid.art-commissions .card.art-commissions.current .card-image.current {
+  opacity: 1;
+}
 
 /* colorized links */
 
-.print-design.current {
+#landing .print-design.current {
   color: rgb(210, 157, 198);
 }
 
-.illustration.current {
+#landing .illustration.current {
   color: rgb(170, 170, 170);
 }
 
-.identity-development.current {
+#landing .identity-development.current {
   color: rgb(145,174,196);
 }
 
-.exhibition-design.current {
+#landing .exhibition-design.current {
   color: rgb(90, 171, 183);
 }
 
-.special-projects.current {
+#landing .special-projects.current {
   color: rgb(154, 147, 120);
 }
 
-.animation.current {
+#landing .animation.current {
   color: rgb(209, 205, 110);
 }
 
-.art-commissions.current {
+#landing .art-commissions.current {
   color: rgb(182, 126, 119);
 }
 
-.hidden {
-  visibility: hidden;
-}
-
-.active,
-.current {
-  visibility: visible;
+.active {
+  z-index: 1;
 }
 
 .current {
@@ -242,32 +293,13 @@ GRID
   position: relative;
 }
 
-.z1 {
-  z-index: 1;
-}
-.z2 {
-  z-index: 2;
-}
-
-#landing.hidden h1 span.current,
-#landing.hidden h1 span.active {
+#landing.hidden h1 a.current,
+#landing.hidden h1 a.active {
   pointer-events: none;
 }
 
 #landing.hidden .current {
   color: inherit;
-}
-
-#grid.active .card-content.faded {
-  opacity: .1;
-}
-
-#grid.active .card.current .card-image {
-  opacity: .05;
-}
-
-#grid.active .card.current .card-content {
-  opacity: .9;
 }
 
 /* card order */
@@ -377,12 +409,12 @@ GRID
     border-bottom: solid .06em;
     line-height: .8;
   }
-  .l-br,
-  a .u-l.l-br {
+  a > span.l-br,
+  .l-br {
     display: inline-block;
   }
-  .p-br,
-  a .u-l.p-br {
+  a > span.p-br,
+  .p-br {
     display: none;
   }
   #grid {
