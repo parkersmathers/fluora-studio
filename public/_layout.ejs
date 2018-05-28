@@ -20,15 +20,15 @@
 
       <%- partial('_includes/_nav') %>
 
-      <% if (current.path[0] === 'index' || current.path[0] === 'work') { %>
+      <% if (current.source === 'contact' || current.source === 'slideshow') { %>
+
+        <%- yield %>
+
+      <% } else { %>
 
         <main id="container">
           <%- yield %>
         </main>
-
-      <% } else { %>
-
-        <%- yield %>
 
       <% } %>
 
