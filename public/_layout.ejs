@@ -34,8 +34,13 @@
 
       <%- partial('_includes/_footer') %>
     </div>
-    <% if (current.source === 'index') { %>
+    <% var source = current.source %>
+    <% if (source === 'index') { %>
       <script src="/assets/js/rollover.js"></script>
+    <% } %>
+    <% var categories = ['print-design', 'illustration', 'identity-development', 'exhibition-design', 'special-projects', 'animation', 'art-commissions'] %>
+    <% if (categories.includes(source)) { %>
+      <script src="/assets/js/hover.js"></script>
     <% } %>
   </body>
 </html>
