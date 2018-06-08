@@ -97,6 +97,58 @@ main {
   justify-content: flex-start;
 }
 
+/* stacking context for layering grid cards + landing text */
+
+#landing.active,
+#grid.active {
+  z-index: 2;
+}
+
+#landing a {
+  position: relative;
+}
+
+#grid.hidden.print-design .print-design,
+#grid.hidden.illustration .illustration,
+#grid.hidden.special-projects .special-projects,
+#grid.hidden.identity-development .identity-development,
+#grid.hidden.exhibition-design .exhibition-design,
+#grid.hidden.animation .animation,
+#grid.hidden.art-commissions .art-commissions {
+  z-index: 1;
+}
+
+#landing.hidden.print-design .print-design,
+#landing.hidden.illustration .illustration,
+#landing.hidden.identity-development .identity-development,
+#landing.hidden.exhibition-design .exhibition-design,
+#landing.hidden.special-projects .special-projects,
+#landing.hidden.animation .animation,
+#landing.hidden.art-commissions .art-commissions {
+  color: black;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#landing.hidden {
+  color: transparent;
+}
+
+/* current-category links */
+
+.current {
+  cursor: pointer;
+}
+
+#landing.hidden h1 a.current,
+#landing.hidden h1 a.active {
+  pointer-events: none;
+}
+
+#landing.hidden .current {
+  color: inherit;
+}
+
 /*
 LANDING
 */
@@ -105,18 +157,6 @@ LANDING
   width: 100%;
   position: absolute;
   margin-top: 3vh;
-}
-
-#landing.hidden {
-  opacity: 0;
-}
-
-#landing.active h1 {
-  opacity: 1;
-}
-
-#landing.active h1.hidden {
-  opacity: 0;
 }
 
 #landing h1 {
@@ -158,7 +198,7 @@ GRID
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 2vw;
-  position: relative;
+  position: absolute;
 }
 
 #grid .card {
@@ -183,19 +223,24 @@ GRID
   width: 100%;
 }
 
+/* hide cards on landing page */
+
 #grid.hidden .card .card-overlay,
 #grid.hidden .card .card-image {
   opacity: 0;
 }
 
-#grid.hidden .card.current .card-overlay,
-#grid.hidden .card .card-overlay.all-gray {
+/* current cards -- 90% color overlay + 10% image */
+
+#grid.hidden .card.current .card-overlay {
   opacity: 0.9;
 }
 
 #grid.hidden .card.current .card-image {
   opacity: 0.1;
 }
+
+/* 100% image -- no color -- on grid page */
 
 #grid.active .card .card-image {
   opacity: 1;
@@ -236,13 +281,18 @@ GRID
   background-color: rgb(182, 126, 119);
 }
 
+/* 'here' link onmouseover -- toggle all cards gray */
+
 #grid.hidden .card .card-overlay.all-gray {
   background-color: rgba(170, 170, 170, 0.2);
+  opacity: 0.9;
 }
 
 #grid.hidden .card:not(.current) {
   pointer-events: none;
 }
+
+/* toggle color overlay on cards -- mouseover on category pages */
 
 #grid.print-design .card.print-design.current .card-overlay.current,
 #grid.illustration .card.illustration.current .card-overlay.current,
@@ -264,7 +314,7 @@ GRID
   opacity: 1;
 }
 
-/* colorized links */
+/* colorized category links */
 
 #landing .print-design.current {
   color: rgb(210, 157, 198);
@@ -294,25 +344,7 @@ GRID
   color: rgb(182, 126, 119);
 }
 
-.active {
-  z-index: 1;
-}
-
-.current {
-  cursor: pointer;
-  position: relative;
-}
-
-#landing.hidden h1 a.current,
-#landing.hidden h1 a.active {
-  pointer-events: none;
-}
-
-#landing.hidden .current {
-  color: inherit;
-}
-
-/* card order */
+/* card order for portrait and landscape */
 
 @media screen and (orientation: portrait) {
   #grid > a:nth-child(1) {
@@ -361,6 +393,10 @@ GRID
     order: 15;
   }
 }
+
+/*
+BREAK POINTS
+*/
 
 @media screen and (orientation: portrait) and (min-width: 500px) {
   nav {
@@ -450,9 +486,9 @@ GRID
   }
 }
 
-/**
-* Slideshow
-**/
+/*
+SLIDESHOW
+*/
 
 #slideshow {
   animation: fadein .7s ease;
@@ -546,9 +582,9 @@ GRID
   }
 }
 
-/**
-* Contact page
-**/
+/*
+CONTACT
+*/
 
 .form-container {
   max-width: 900px;
