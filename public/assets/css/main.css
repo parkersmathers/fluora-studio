@@ -34,7 +34,6 @@ ul, li {
 }
 
 a {
-  /* cursor: pointer; */
   text-decoration: none;
   color: inherit;
 }
@@ -54,6 +53,7 @@ a {
   padding-left: 2vw;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 header, footer, #landing {
@@ -85,13 +85,13 @@ footer p {
 }
 
 /*
-MAIN
+MAIN container -- landing and grid pages
 */
 
 main {
   width: 100%;
   position: relative;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -282,7 +282,6 @@ GRID
 }
 
 /* 'here' link onmouseover -- toggle all cards gray */
-
 #grid.hidden .card .card-overlay.all-gray {
   background-color: rgba(170, 170, 170, 0.2);
   opacity: 0.9;
@@ -492,20 +491,12 @@ SLIDESHOW
 
 #slideshow {
   animation: fadein .7s ease;
-  width: 110vw;
   margin-left: -2vw;
   flex: 1;
-  align-self: flex-start;
   display: flex;
-  align-items: center;
-}
-
-#slideshow .row {
   overflow-x: scroll;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  flex: 1;
-  display: flex;
 }
 
 ::-webkit-scrollbar {
@@ -515,6 +506,7 @@ SLIDESHOW
 }
 
 #slideshow .card {
+  flex-shrink: 0;
   padding: 1em;
   white-space: nowrap;
 }
