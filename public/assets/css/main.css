@@ -17,7 +17,7 @@ html, body {
   height: 100%;
 }
 
-section, div, nav, footer, form, ul {
+section, div, header, footer, form, ul {
   display: block;
 }
 
@@ -56,7 +56,7 @@ a {
   flex-direction: column;
 }
 
-nav, footer, #landing {
+header, footer, #landing {
   margin-left: 7vw;
 }
 
@@ -64,7 +64,7 @@ nav, footer, #landing {
 HEADER & FOOTER
 */
 
-nav, footer {
+header, footer {
   width: 100%;
   height: 7vh;
   display: flex;
@@ -72,7 +72,7 @@ nav, footer {
   justify-content: center;
 }
 
-nav h2 {
+header h2 {
   font-size: 5vw;
 }
 
@@ -399,10 +399,10 @@ BREAK POINTS
 */
 
 @media screen and (orientation: portrait) and (min-width: 500px) {
-  nav {
+  header {
     height: 10vh;
   }
-  nav h2 {
+  header h2 {
     font-size: 4vw;
   }
   #landing h1 {
@@ -432,13 +432,13 @@ BREAK POINTS
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 1vw;
   }
-  nav, footer, #landing {
+  header, footer, #landing {
     margin-left: 1vw;
   }
-  nav, footer {
+  header, footer {
     height: 10vh;
   }
-  nav h2 {
+  header h2 {
     font-size: 2.5vw;
   }
   footer p {
@@ -474,7 +474,7 @@ BREAK POINTS
 }
 
 @media screen and (orientation: landscape) and (min-width: 750px) {
-  nav h2 {
+  header h2 {
     font-size: 4vh;
   }
   footer p {
